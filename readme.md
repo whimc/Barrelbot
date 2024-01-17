@@ -1,8 +1,8 @@
-**Barrelbot**
+#Barrelbot
 
 _v0_4_
 
-**Dev book**
+##Dev book
 
 To give yourself the dev book, type the following command chat (all developer functions are contained within this):
 
@@ -10,15 +10,15 @@ To give yourself the dev book, type the following command chat (all developer fu
 
 The following sections detail how to use the dev book
 
-**Creating a puzzle**
+##Creating a puzzle
 
-All puzzles are defined by a primary **puzzle entity**, which is located at the puzzle’s activation button. To create a puzzle, open your dev book and click:
+All puzzles are defined by a primary ##puzzle entity, which is located at the puzzle’s activation button. To create a puzzle, open your dev book and click:
 
 * Puzzle &gt; Create Puzzle
 
 If there is not already a button there, this will create the button and puzzle entity at your feet. You can break and replace this button without deleting the puzzle, and any button type will work.
 
-**Puzzle Linking**
+##Puzzle Linking
 
 Whenever you’re editing a puzzle, you should always link yourself to the puzzle you’re working on. This will ensure that any bots you spawn are linked to that puzzle and will activate when you press the corresponding button. You can do this with:
 
@@ -26,13 +26,13 @@ Whenever you’re editing a puzzle, you should always link yourself to the puzzl
 
 You will also automatically link to a puzzle when you spawn it.
 
-**Deleting a puzzle**
+##Deleting a puzzle
 
 Delete the puzzle *nearest to you* with:
 
 `Puzzle &gt; Delete Puzzle`
 
-**Spawning/Deleting Bots and other features**
+##Spawning/Deleting Bots and other features
 
 Under the Features tab, you’ll find a list of spawnable features. They will automatically link to whatever puzzle you’re currently linked to
 
@@ -47,7 +47,7 @@ Under the Features tab, you’ll find a list of spawnable features. They will au
     * To make changes, go to Features &gt; Convert to Barrel, make you changes, then convert it back to a barrel bot
     * Destroyed the same way as barrel bots
 
-**Instructions**
+##Instructions
 
 These are the actual commands the barrelbots execute, and you can give them to yourself in the Instructions tab of the dev book
 
@@ -85,22 +85,22 @@ These configurable instructions include:
 * While loops
     * Configurations the same as If statements
 
-**Puzzle Success Conditions**
+##Puzzle Success Conditions
 
 The puzzle manager is coded to have configurable success conditions, so we can have different ways of measuring whether a puzzle is “complete”, like having all barrel bots land on a green space, or delivering a cake to a certain location.
 
-**Setting a success condition for a puzzle**
+##Setting a success condition for a puzzle
 
 To set a puzzle’s success condition, stand near it and click Puzzle &gt; Set Success Condition. Paste the command into chat, and replace the `“”` at the end with the success condition’s name.
 
-**List of success conditions**
+##List of success conditions
 
 Currently, there is only one success condition
 
 `touch\_green`
   Puzzle is successful if all bots are standing on a green space
 
-**[Technical] Adding a new success condition**
+##[Technical] Adding a new success condition
 
 1. Navigate to the success conditions folder
     1. data &gt; whimc &gt; functions &gt; barrelbot &gt; success\_conditions
@@ -112,7 +112,7 @@ Currently, there is only one success condition
     2. `scoreboard players set $success whimc.dummy 1`communicates success
     3. `scoreboard players set $success whimc.dummy 0`communicates failure
 
-**Setting Puzzle Items**
+##Setting Puzzle Items
 
 If you want to restrict a puzzle to only allow a specific set of items, you can do the following:
 
@@ -124,11 +124,11 @@ If you want to restrict a puzzle to only allow a specific set of items, you can 
 
 These items are now bound to a puzzle. If a player in survival mode tries to take items out of the boundaries of the puzzle, they will get transported back to the hopper and filtered back into the shulker box.
 
-**Setting boundaries**
+##Setting boundaries
 
 Boundaries are set by placing **light blocks** with a **light level of 0**. When a player touches one of these blocks, any puzzle-bound items in their inventory will be transported back to their appropriate puzzle.
 
-**Resetting all puzzles**
+##Resetting all puzzles
 
 You can reset all puzzles using Puzzle &gt; Reset all puzzles.
 
