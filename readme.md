@@ -1,12 +1,12 @@
 **Barrelbot**
 
-* v0_4
+_v0_4_
 
 **Dev book**
 
 To give yourself the dev book, type the following command chat (all developer functions are contained within this):
 
-* `/function whimc:barrelbot/dev/give_dev_book`
+`/function whimc:barrelbot/dev/give_dev_book`
 
 The following sections detail how to use the dev book
 
@@ -22,7 +22,7 @@ If there is not already a button there, this will create the button and puzzle e
 
 Whenever you’re editing a puzzle, you should always link yourself to the puzzle you’re working on. This will ensure that any bots you spawn are linked to that puzzle and will activate when you press the corresponding button. You can do this with:
 
-* Puzzle &gt; Link to Puzzle
+`Puzzle &gt; Link to Puzzle`
 
 You will also automatically link to a puzzle when you spawn it.
 
@@ -30,7 +30,7 @@ You will also automatically link to a puzzle when you spawn it.
 
 Delete the puzzle *nearest to you* with:
 
-* Puzzle &gt; Delete Puzzle
+`Puzzle &gt; Delete Puzzle`
 
 **Spawning/Deleting Bots and other features**
 
@@ -97,8 +97,8 @@ To set a puzzle’s success condition, stand near it and click Puzzle &gt; Set S
 
 Currently, there is only one success condition
 
-* touch\_green
-    * Puzzle is successful if all bots are standing on a green space
+`touch\_green`
+  Puzzle is successful if all bots are standing on a green space
 
 **[Technical] Adding a new success condition**
 
