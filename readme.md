@@ -16,7 +16,6 @@ All puzzles are defined by a primary **puzzle entity**, which is located at the 
 
 * Puzzle &gt; Create Puzzle
 
-![](./pasted+image+0.png)
 If there is not already a button there, this will create the button and puzzle entity at your feet. You can break and replace this button without deleting the puzzle, and any button type will work.
 
 **Puzzle Linking**
