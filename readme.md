@@ -60,8 +60,8 @@ Most instructions can be acquired without any configuration. These include:
 * End code block
 * Infinite loop
 
-Some instructions require further specifications. They will copy the command to your clipboard, which you will have to paste in chat then configure by adding text to the command.
-![](./pasted+image+0+1.png)![](./pasted+image+0+2.png)
+Some instructions require further specifications. They will copy the command to your clipboard, which you will have to paste in chat then configure by adding text to the command.\
+![](./pasted+image+0+1.png)![](./pasted+image+0+2.png)\
 These configurable instructions include:
 
 * If statements
