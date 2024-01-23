@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "front": "whimc:barrelbot/block/barrelbot_front",
+    "side": "whimc:barrelbot/block/barrelbot_side",
+    "top": "whimc:barrelbot/block/barrelbot_top",
+    "bottom": "whimc:barrelbot/block/barrelbot_bottom"
+  }
+}

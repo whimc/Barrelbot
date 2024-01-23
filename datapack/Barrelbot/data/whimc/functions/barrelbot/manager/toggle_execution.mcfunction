@@ -1,7 +1,7 @@
 #> whimc:barrelbot/manager/toggle_execution
 #
 
-scoreboard players set @s whimc.button_delay 21
+scoreboard players set @s whimc.button_delay 25
 
 execute store result score $is_active whimc.dummy if entity @s[tag=whimc.barrelbot.puzzle_manager.active]
 

@@ -9,21 +9,19 @@ give @s written_book{barrelbot_dev_book:1b,display:{Name:'{"text":"Barrelbot Dev
     '[\
         {"text":"Features\\n"},\
         {"text":"Spawn Bot\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/spawn_bot"}},\
-        {"text":"Delete Bot\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/delete_bot"}},\
         {"text":"Convert to Dispenser\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/convert_to_dispenser"}},\
         {"text":"Convert to Barrel\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/convert_to_barrel"}},\
         {"text":"Create Function\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/create_function"}},\
-        {"text":"Delete Function\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/delete_function"}},\
         {"text":"Link Function Item\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/link_function_item"}}\
     ]',\
     '[\
         {"text":"Puzzle\\n"},\
         {"text":"Link to Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/link_puzzle"}},\
         {"text":"Create Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/spawn_manager"}},\
-        {"text":"Delete Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/delete_puzzle"}},\
         {"text":"Set Success Condition\\n","color":"blue","clickEvent":{"action":"copy_to_clipboard","value":"/data modify entity @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage,sort=nearest] data.success_function set value \\"\\""},"hoverEvent":{"action":"show_text","value":[{"text":"Copy to Clipboard"}]}},\
         {"text":"Set Puzzle Items\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/lock_puzzle_items"}},\
-        {"text":"Reset All Puzzles\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/reset_all_puzzles"}}\
+        {"text":"Reset All Puzzles\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/reset_all_puzzles"}},\
+        {"text":"Toggle Edit Mode\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/toggle_edit_mode"}}\
     ]',\
     '[\
         {"text":"Instructions\\n"},\
@@ -39,10 +37,7 @@ give @s written_book{barrelbot_dev_book:1b,display:{Name:'{"text":"Barrelbot Dev
     ]',\
     '[\
         {"text":"Clone\\n"},\
-        {"text":"Start clone\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/begin_clone"}},\
-        {"text":"End clone\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/end_clone"}},\
-        {"text":"Set Position 1\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/set_pos1"}},\
-        {"text":"Set Position 2\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/set_pos2"}},\
-        {"text":"Paste Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/paste_puzzle"}}\
+        {"text":"Paste Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/paste_puzzle"}},\
+        {"text":"Cascade Clone\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/cascade_clone"}}\
     ]'\
 ]}

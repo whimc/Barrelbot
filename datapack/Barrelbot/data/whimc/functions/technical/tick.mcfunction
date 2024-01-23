@@ -1,11 +1,11 @@
 #> whimc:technical/tick
 #   Commands run per tick
 
-#Manage all demos
-function whimc:demos/generic/tick
-
 #Barrelbot
 execute as @e[type=text_display,tag=whimc.barrelbot.puzzle_manager] at @s run function whimc:barrelbot/manager/tick
-execute as @a[gamemode=!creative] at @s if block ~ ~ ~ minecraft:light[level=0] run function whimc:barrelbot/no_smuggle/return_all_items
+execute as @a[tag=whimc.in_puzzle] at @s run function whimc:barrelbot/no_smuggle/check_leave_boundary 
 execute as @a[tag=whimc.barrelbot.cloning] at @s run function whimc:barrelbot/clone/tick
+execute as @a[tag=whimc.dragging_node] at @s run function whimc:barrelbot/editor/drag/drag_tick
 execute as @a[predicate=whimc:barrelbot/holding_dev_book] run function whimc:barrelbot/dev/highlight_linked_puzzle
+scoreboard players add #slow_tick whimc.dummy 1
+execute if score #slow_tick whimc.dummy matches 5.. run function whimc:technical/slow_tick

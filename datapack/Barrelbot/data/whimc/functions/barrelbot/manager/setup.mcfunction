@@ -21,3 +21,10 @@ summon marker ~ ~ ~ {Tags:["whimc.barrelbot.puzzle_storage","whimc.barrelbot.puz
 ride @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage.init] mount @s
 execute as @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage.init] run function whimc:barrelbot/manager/setup_marker
 tag @e[tag=whimc.barrelbot.puzzle_storage.init] remove whimc.barrelbot.puzzle_storage.init
+
+#Set the shulker box and hopper
+execute rotated as @s positioned ~ ~-1 ~ positioned ^ ^ ^-1 run setblock ~ ~ ~ yellow_shulker_box
+execute if score $direction whimc.dummy matches 0 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=west]
+execute if score $direction whimc.dummy matches 1 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=north]
+execute if score $direction whimc.dummy matches 2 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=east]
+execute if score $direction whimc.dummy matches 3 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=south]

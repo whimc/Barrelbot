@@ -2,7 +2,9 @@
 #   Clones a function box
 
 data modify storage whimc:storage function_id set from entity @s data.id
+execute at @s positioned ~ ~1 ~ store success score #locked whimc.dummy if entity @e[type=item_display,limit=1,sort=nearest,tag=whimc.function_display.locked]
 execute at @s positioned ~ ~1 ~ run data modify storage whimc:storage display_item set from entity @e[type=item_display,limit=1,sort=nearest] item 
+execute at @s positioned ~ ~1.35 ~ run data modify storage whimc:storage text_display set from entity @e[type=text_display,limit=1,sort=nearest] text 
 
 execute store result score $bot_offset_x whimc.dummy run data get entity @s Pos[0]
 execute store result score $bot_offset_y whimc.dummy run data get entity @s Pos[1]

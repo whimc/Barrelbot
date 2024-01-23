@@ -13,3 +13,6 @@ execute store result score $max_y whimc.dummy run data get storage whimc:storage
 execute store result score $max_z whimc.dummy run data get storage whimc:storage data.max_z
 
 function whimc:barrelbot/editor/outline/spawn
+
+#Spawn interactions
+function whimc:barrelbot/editor/drag/spawn_drag_nodes with storage whimc:storage data

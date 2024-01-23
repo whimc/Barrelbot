@@ -10,25 +10,33 @@ scoreboard objectives add whimc.barrelbot.slot dummy
 scoreboard objectives add whimc.barrelbot.step_timer dummy
 scoreboard objectives add whimc.barrelbot.puzzle_id dummy
 scoreboard objectives add whimc.barrelbot.bot_id dummy
+scoreboard objectives add whimc.barrelbot.node_id dummy
 scoreboard objectives add whimc.button_delay dummy
 scoreboard objectives add whimc.barrelbot.display_layer dummy
 scoreboard objectives add whimc.barrelbot.push_count dummy
+scoreboard objectives add whimc.barrelbot.in_puzzle_id dummy
 
-#Cloning variables
-scoreboard objectives add whimc.barrelbot.clone.x1 dummy
-scoreboard objectives add whimc.barrelbot.clone.y1 dummy
-scoreboard objectives add whimc.barrelbot.clone.z1 dummy
-scoreboard objectives add whimc.barrelbot.clone.x2 dummy
-scoreboard objectives add whimc.barrelbot.clone.y2 dummy
-scoreboard objectives add whimc.barrelbot.clone.z2 dummy
+#Bounding box
+scoreboard objectives add whimc.barrelbot.bound_x dummy
+scoreboard objectives add whimc.barrelbot.bound_y dummy
+scoreboard objectives add whimc.barrelbot.bound_z dummy
+scoreboard objectives add whimc.barrelbot.bound_dx dummy
+scoreboard objectives add whimc.barrelbot.bound_dy dummy
+scoreboard objectives add whimc.barrelbot.bound_dz dummy
+
+#Cloning
+scoreboard objectives add whimc.barrelbot.cascade.x dummy
+scoreboard objectives add whimc.barrelbot.cascade.z dummy
+scoreboard objectives add whimc.barrelbot.cascade.x_spacing dummy
+scoreboard objectives add whimc.barrelbot.cascade.z_spacing dummy
 
 #Storage things
 #declare storage whimc:macro
 #declare storage whimc:storage
 
 #declare storage whimc:const
-data modify storage whimc:const text.barrelbot.start set value '{"text":"Run","color":"green","bold":"true"}'
-data modify storage whimc:const text.barrelbot.stop set value '{"text":"Reset","color":"red","bold":"true"}'
+data modify storage whimc:const text.barrelbot.start set value '{"text":"Run","color":"green","bold":true}'
+data modify storage whimc:const text.barrelbot.stop set value '{"text":"Reset","color":"red","bold":true}'
 
 
 #Constants

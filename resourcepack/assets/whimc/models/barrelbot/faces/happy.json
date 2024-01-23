@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "whimc:barrelbot/faces/happy",
+    "side": "whimc:barrelbot/faces/side",
+    "top": "whimc:barrelbot/faces/top"
+  }
+}

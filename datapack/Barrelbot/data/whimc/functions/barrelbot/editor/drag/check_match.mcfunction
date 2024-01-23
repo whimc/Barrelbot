@@ -1,0 +1,7 @@
+#> whimc:barrelbot/editor/drag/check_match
+#   Checks if this was the interaction clicked by the player
+
+scoreboard players set #match_found whimc.dummy 0
+execute on target if entity @s[tag=whimc.clicker] run scoreboard players set #match_found whimc.dummy 1
+
+execute if score #match_found whimc.dummy matches 1 run function whimc:barrelbot/editor/drag/node_clicked

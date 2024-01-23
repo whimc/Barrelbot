@@ -7,6 +7,6 @@
 #   Make a "Link item" function that updates the display and links the current item to the barrel
 #   Functions are stored in an array of functions on the manager marker
 
-setblock ~ ~ ~ barrel[facing=up]{CustomName:'{"text":"Function"}'}
-scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
+setblock ~ ~ ~ shulker_box[facing=up]{CustomName:'{"text":"Function"}'}
+#scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
 execute align xyz positioned ~0.5 ~0.5 ~0.5 summon marker at @s run function whimc:barrelbot/functions/marker_setup
