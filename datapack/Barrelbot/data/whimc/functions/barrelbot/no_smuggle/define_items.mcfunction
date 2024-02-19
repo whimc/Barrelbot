@@ -1,6 +1,8 @@
 #> whimc:barrelbot/no_smuggle/define_items
 #   Defines the items for a given puzzle
 
+data remove storage whimc:storage Items
+
 #Get data from block
 execute positioned ~ ~-1 ~ run data modify storage whimc:storage Items set from block ^ ^ ^-1 Items
 

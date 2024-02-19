@@ -10,6 +10,10 @@ execute if score $direction whimc.dummy matches 3 run tp @s ~ ~ ~ 270 0
 scoreboard players add $global whimc.barrelbot.puzzle_id 1
 scoreboard players operation @s whimc.barrelbot.puzzle_id = $global whimc.barrelbot.puzzle_id
 
+#Puzzle type ID is used to link together cloned puzzles
+scoreboard players add $global whimc.barrelbot.puzzle_type_id 1
+scoreboard players operation @s whimc.barrelbot.puzzle_type_id = $global whimc.barrelbot.puzzle_type_id
+
 data merge entity @s {"billboard":"center"}
 data modify entity @s text set from storage whimc:const text.barrelbot.start
 
@@ -23,7 +27,7 @@ execute as @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage.init] run f
 tag @e[tag=whimc.barrelbot.puzzle_storage.init] remove whimc.barrelbot.puzzle_storage.init
 
 #Set the shulker box and hopper
-execute rotated as @s positioned ~ ~-1 ~ positioned ^ ^ ^-1 run setblock ~ ~ ~ yellow_shulker_box
+execute rotated as @s positioned ~ ~-1 ~ positioned ^ ^ ^-1 unless block ~ ~ ~ yellow_shulker_box run setblock ~ ~ ~ yellow_shulker_box
 execute if score $direction whimc.dummy matches 0 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=west]
 execute if score $direction whimc.dummy matches 1 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=north]
 execute if score $direction whimc.dummy matches 2 rotated as @s positioned ~ ~-1 ~ positioned ^1 ^ ^-1 run setblock ~ ~ ~ hopper[facing=east]

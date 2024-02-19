@@ -38,6 +38,7 @@ give @s written_book{barrelbot_dev_book:1b,display:{Name:'{"text":"Barrelbot Dev
     '[\
         {"text":"Clone\\n"},\
         {"text":"Paste Puzzle\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/clone/paste_puzzle"}},\
-        {"text":"Cascade Clone\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/cascade_clone"}}\
+        {"text":"Cascade Clone\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/cascade_clone"}},\
+        {"text":"Propagate Changes\\n","color":"blue","clickEvent":{"action":"run_command","value":"/function whimc:barrelbot/dev/propagate_changes"}}\
     ]'\
 ]}

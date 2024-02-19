@@ -18,6 +18,8 @@
 	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_bottom"},
 	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_side"},
 	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_front"},
-	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_top"}	
+	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_top"},
+	{"type": "single","resource": "whimc:barrelbot/ui/close"},	
+	{"type": "single","resource": "whimc:barrelbot/ui/barrelbot/swap_mode"}	
     ]
 }

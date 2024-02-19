@@ -10,4 +10,6 @@ execute align xyz positioned ~0.5 ~0.5 ~0.5 summon text_display run function whi
 scoreboard players operation @s[type=player] whimc.barrelbot.puzzle_id = $global whimc.barrelbot.puzzle_id
 scoreboard players operation $new_id whimc.barrelbot.puzzle_id = $global whimc.barrelbot.puzzle_id
 
+scoreboard players operation @s whimc.barrelbot.puzzle_type_id = $temp whimc.barrelbot.puzzle_type_id
+
 tellraw @s {"text": "Successfully linked to puzzle", "color": "green"}

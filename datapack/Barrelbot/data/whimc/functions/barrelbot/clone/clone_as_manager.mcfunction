@@ -2,9 +2,11 @@
 #   Clones all the stuff
 #   Executed as puzzle manager, at player
 
+scoreboard players operation $temp whimc.barrelbot.puzzle_type_id = @s whimc.barrelbot.puzzle_type_id
+
 #Get data from marker
 #data modify storage whimc:storage clone.marker set from entity @s
-execute on passengers run function whimc:barrelbot/manager/get_dimensions
+function whimc:barrelbot/manager/get_dimensions
 scoreboard players operation $min_source_x whimc.dummy = $real_min_x whimc.dummy
 scoreboard players operation $min_source_y whimc.dummy = $real_min_y whimc.dummy
 scoreboard players operation $min_source_z whimc.dummy = $real_min_z whimc.dummy
@@ -40,10 +42,10 @@ function whimc:barrelbot/clone/clone_entities with storage whimc:macro Pos
 
 
 #Have any other puzzle markers in the bounding box clone as well
-execute store result storage whimc:macro scan.x int 1 run scoreboard players get $min_source_x whimc.dummy
-execute store result storage whimc:macro scan.y int 1 run scoreboard players get $min_source_y whimc.dummy
-execute store result storage whimc:macro scan.z int 1 run scoreboard players get $min_source_z whimc.dummy
-
-execute store result storage whimc:macro scan.dx int 1 run scoreboard players get $vol_x whimc.dummy
-execute store result storage whimc:macro scan.dy int 1 run scoreboard players get $vol_y whimc.dummy
-execute store result storage whimc:macro scan.dz int 1 run scoreboard players get $vol_z whimc.dummy
+#execute store result storage whimc:macro scan.x int 1 run scoreboard players get $min_source_x whimc.dummy
+#execute store result storage whimc:macro scan.y int 1 run scoreboard players get $min_source_y whimc.dummy
+#execute store result storage whimc:macro scan.z int 1 run scoreboard players get $min_source_z whimc.dummy
+#
+#execute store result storage whimc:macro scan.dx int 1 run scoreboard players get $vol_x whimc.dummy
+#execute store result storage whimc:macro scan.dy int 1 run scoreboard players get $vol_y whimc.dummy
+#execute store result storage whimc:macro scan.dz int 1 run scoreboard players get $vol_z whimc.dummy
