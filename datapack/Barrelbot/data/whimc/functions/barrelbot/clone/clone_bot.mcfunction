@@ -13,4 +13,4 @@ execute store result storage whimc:macro Pos.y int 1 run scoreboard players oper
 execute store result storage whimc:macro Pos.z int 1 run scoreboard players operation $bot_offset_z whimc.dummy -= $source_z whimc.dummy
 
 
-execute rotated as @s run function whimc:barrelbot/clone/position_bot_clone with storage whimc:macro Pos
+execute rotated as @s rotated ~180 ~ run function whimc:barrelbot/clone/position_bot_clone with storage whimc:macro Pos

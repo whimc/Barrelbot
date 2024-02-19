@@ -1,6 +1,7 @@
 #> whimc:barrelbot/no_smuggle/return_all_items
 #   If the player hits a border, return all items to their rightful puzzle
 
+tag @s remove whimc.in_puzzle
 execute unless data entity @s Inventory[{tag:{barrelbot:{puzzle_item:1b}}}] run return 0
 
 #Recursively return all items

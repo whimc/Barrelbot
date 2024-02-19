@@ -12,9 +12,9 @@ scoreboard players operation @s whimc.barrelbot.bot_id = $global whimc.barrelbot
 
 data modify storage whimc:storage SpawnPos set from entity @s Pos
 
-execute if score $direction whimc.dummy matches 1 run tp @s ~ ~ ~ 90 0
-execute if score $direction whimc.dummy matches 2 run tp @s ~ ~ ~ 180 0
-execute if score $direction whimc.dummy matches 3 run tp @s ~ ~ ~ 270 0
+execute if score $direction whimc.dummy matches 3 run tp @s ~ ~ ~ 90 0
+execute if score $direction whimc.dummy matches 0 run tp @s ~ ~ ~ 180 0
+execute if score $direction whimc.dummy matches 1 run tp @s ~ ~ ~ 270 0
 
 data modify storage whimc:storage SpawnRotation set from entity @s Rotation
 
