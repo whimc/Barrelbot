@@ -63,15 +63,16 @@ Most instructions can be acquired without any configuration. These include:
 * End code block
 * Infinite loop
 
-Some instructions require further specifications. They will copy the command to your clipboard, which you will have to paste in chat then configure by adding text to the command.\
+Some instructions require further specifications. They will copy the instruction command to your clipboard, which you will then have to paste in chat and configure by adding text to the command.\
 ![](instruction-images/instructions-book.png)![](instruction-images/condition-arguments.png)\
 These configurable instructions include:
 
 * If statements
+    * the instruction command contains two parts: {condition: " ", description: " "}. 
     * {condition:”  ”}
-        * The condition the if statement checks for. Formatted in the same way the `execute if` subcommand is
-        * Example: To check if the block ahead is air, you would insert“`if block ^ ^ ^1 air`”
-        * Coordinate guide:
+        * this is the condition that the if statement checks for. It is formatted in the same way that the `execute if` subcommand is
+        * Example: To check if the block ahead is air, you would insert “`if block ^ ^ ^1 air`” into the condition quotation marks
+        * Coordinate guide (these all the characters to place into the condition):
             * Forward: ^ ^ ^1
             * Backwards: ^ ^ ^-1
             * Left: ^1 ^ ^
@@ -94,7 +95,7 @@ The puzzle manager is coded to have configurable success conditions, so we can h
 
 ## Setting a success condition for a puzzle
 
-To set a puzzle’s success condition, stand near it and click Puzzle &gt; Set Success Condition. Paste the command into chat, and replace the `“”` at the end with the success condition’s name.
+To set a puzzle’s success condition, stand near it and click Puzzle > Set Success Condition. Paste the command into chat, and replace the `“”` at the end with the success condition’s name.
 
 ## List of success conditions
 
@@ -106,7 +107,7 @@ Currently, there is only one success condition
 ## [Technical] Adding a new success condition
 
 1. Navigate to the success conditions folder
-    1. data &gt; whimc &gt; functions &gt; barrelbot &gt; success\_conditions
+    1. data > whimc > functions > barrelbot > success\_conditions
 2. Create a new function file
     1. The name of the function is the id of the success condition
     2. Ex: deliver\_cake.mcfunction
@@ -123,7 +124,7 @@ If you want to restrict a puzzle to only allow a specific set of items, you can 
 2. Put a yellow shulker box (or other container block) 1 block behind and 1 block below the puzzle
 3. Place a hopper to the left of the shulker box facing it
 4. Place any items you want the puzzle to have in the shulker box
-5. Click Puzzle &gt; Set Puzzle Items
+5. Click Puzzle > Set Puzzle Items
 
 These items are now bound to a puzzle. If a player in survival mode tries to take items out of the boundaries of the puzzle, they will get transported back to the hopper and filtered back into the shulker box.
 
@@ -133,6 +134,6 @@ Boundaries are set by placing **light blocks** with a **light level of 0**. When
 
 ## Resetting all puzzles
 
-You can reset all puzzles using Puzzle &gt; Reset all puzzles.
+You can reset all puzzles using Puzzle > Reset all puzzles.
 
 This will stop any puzzles that were left running and restore a puzzle’s item box to its original state.
