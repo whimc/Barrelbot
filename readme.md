@@ -12,17 +12,17 @@ The following sections detail how to use the dev book
 
 ## Creating a puzzle
 
-All puzzles are defined by a primary ## puzzle entity, which is located at the puzzle’s activation button. To create a puzzle, open your dev book and click:
+All puzzles are defined by a primary puzzle entity, which is located at the puzzle’s activation button. To create a puzzle, open your dev book and click:
 
-* Puzzle &gt; Create Puzzle
+Puzzle > Create Puzzle
 
 If there is not already a button there, this will create the button and puzzle entity at your feet. You can break and replace this button without deleting the puzzle, and any button type will work.
 
 ## Puzzle Linking
 
-Whenever you’re editing a puzzle, you should always link yourself to the puzzle you’re working on. This will ensure that any bots you spawn are linked to that puzzle and will activate when you press the corresponding button. You can do this with:
+Whenever you’re editing a puzzle, you should always link yourself to the puzzle that you’re working on. This will ensure that any bots you spawn are linked to that puzzle and will activate when you press the corresponding button. You can do this with:
 
-`Puzzle &gt; Link to Puzzle`
+Puzzle > Link to Puzzle
 
 You will also automatically link to a puzzle when you spawn it.
 
@@ -30,21 +30,24 @@ You will also automatically link to a puzzle when you spawn it.
 
 Delete the puzzle *nearest to you* with:
 
-`Puzzle &gt; Delete Puzzle`
+Puzzle > Delete Puzzle
 
 ## Spawning/Deleting Bots and other features
 
 Under the Features tab, you’ll find a list of spawnable features. They will automatically link to whatever puzzle you’re currently linked to
 
 * Barrelbot
+    * Created with Features > Spawn Bot
     * Will face the way that you were facing when you spawn it
+    * Make sure you are not standing directly over the run button when you spawn the bot or it will spawn over the button
+    * To delete the barrelbot, click Features > Delete Bot
 * Function
-    * Currently spawned as a barrel, but can be swapped out with any container block (will probably use shulker boxes as the convention)
-    * To obtain an item linked to the function, hold the item of choice in your mainhand with the book in your offhand, stand near the function you want to link it to, then click Features &gt; Link Function Item
+    * Spawns as container block with a message saying "click to link function item"
+    * You can link a function item by either clicking on the block with the item in your hand or by standing near the function you want to link it to and clicking Features > Link Function Item
 * Dispenser bot
     * First, create a barrelbot and load in it any instructions you want the dispenser bot to have
-    * Once you’ve set it up, stand near it and click Features &gt; Convert to Dispenser
-    * To make changes, go to Features &gt; Convert to Barrel, make you changes, then convert it back to a barrel bot
+    * Once you’ve set it up, stand near it and click Features > Convert to Dispenser
+    * To make changes, go to Features > Convert to Barrel, make any changes you would like, then convert it back to a dispenser bot
     * Destroyed the same way as barrel bots
 
 ## Instructions
