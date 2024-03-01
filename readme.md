@@ -137,3 +137,58 @@ Boundaries are set by placing **light blocks** with a **light level of 0**. When
 You can reset all puzzles using Puzzle > Reset all puzzles.
 
 This will stop any puzzles that were left running and restore a puzzle’s item box to its original state.
+
+________________________________________
+## [WIP]Editor 2.0
+The puzzle editing interface is currently undergoing a major overhaul. All of the old documentation will be kept for the time being until it’s been fully phased out, but when possible using these new features is recommended (and easier!)
+
+## Puzzle Wand
+Command: `/loot give @s loot whimc:edit_wand`
+
+The wand allows you to tinker with the features of a puzzle. Simply **right click** while holding the wand to scan for an editable feature. If an editable feature is found, it will bring up an editing menu. To exit this menu, click the red X or **crouch**. You need to be out of interaction range with objects that you can open or press.
+
+[photo showing distance and wand in-hand]
+
+## List of Editable Features and How They Can be Edited (WIP):
+
+**Barrelbot**:
+Swap dispenser/barrel: converts the barrelbot between barrel and dispenser form. Dispensers have their items locked and are meant to be part of the puzzle ratehr than something to interface/work with directly.
+
+*(WIP) Additions to be made: change face/expression, lock the bot*
+
+**Puzzle Button**:
+
+Scanning a puzzle button will automatically link you to that puzzle. The puzzle you’re linked to will show a purple indicator over it whenever you’re holding an edit wand.
+
+[photo showing puzzle selection]
+
+Toggle size editor: allows you to edit
+*note: this feature currently does not have an icon, and is instead indicated by a yellow stained glass pane*
+
+Propagate changes: any changes made to this puzzle will be copied over to any clones of the puzzle as well
+*note: this feature is currently indicated by an orange stained glass pane*
+
+**Block Commands**
+
+Puzzle Button: `/function whimc:barrelbot/block/puzzle_button/give`
+
+Barrelbot: `/function whimc:barrelbot/block/barrelbot/give`
+
+Function: `/function whimc:barrelbot/block/function/give`
+
+## Cloning Changes
+
+*note: still in the process of being transferred to the wand*
+
+**Basic Clone**: Clone the puzzle you are currently linked to, placing the new puzzle’s button at your feet. Found in the dev book on the **Clone** page.
+
+**Cascade Clone**: Creates a 2-dimensional array of clones of the puzzle you are currently linked to. To perform a cascade clone:
+   1) Link to a puzzle by selecting it with a puzzle wand
+   2) In the dev book, select clone > cascade clone. This will bring up a menu
+   3) Specify the dimensions of the array in the x and z direction (negative numbers will paste that many clones in the negative x/z direction)
+   4) Specify the spacing between puzzles in the x/z direction
+   5) Click "paste" (note: preview button does not currently do anything)
+
+
+
+
