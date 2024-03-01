@@ -144,10 +144,12 @@ The puzzle editing interface is currently undergoing a major overhaul. All of th
 
 ## Puzzle Wand
 Command: `/loot give @s loot whimc:edit_wand`
+*if the @s gives a selector not allowed error, replace it with your username*
 
-The wand allows you to tinker with the features of a puzzle. Simply **right click** while holding the wand to scan for an editable feature. If an editable feature is found, it will bring up an editing menu. To exit this menu, click the red X or **crouch**. You need to be out of interaction range with objects that you can open or press.
+The wand allows you to tinker with the features of a puzzle. Simply **right click** while holding the wand to scan for an editable feature. If an editable feature is found, it will bring up an editing menu. To exit this menu, press the left shift button or **crouch**. You need to be out of interaction range with objects that you can open or press.
 
-[photo showing distance and wand in-hand]
+<img width="849" alt="Screenshot 2024-02-29 at 10 54 23 PM" src="https://github.com/whimc/Barrelbot/assets/148797817/e053657f-bb09-49f2-a9ab-b51797eba1fb">
+
 
 ## List of Editable Features and How They Can be Edited (WIP):
 
@@ -160,7 +162,8 @@ Swap dispenser/barrel: converts the barrelbot between barrel and dispenser form.
 
 Scanning a puzzle button will automatically link you to that puzzle. The puzzle you’re linked to will show a purple indicator over it whenever you’re holding an edit wand.
 
-[photo showing puzzle selection]
+<img width="281" alt="Screenshot 2024-02-29 at 10 58 01 PM" src="https://github.com/whimc/Barrelbot/assets/148797817/87529e38-c47c-4650-be0e-47a986aebd93">
+
 
 Toggle size editor: allows you to edit
 *note: this feature currently does not have an icon, and is instead indicated by a yellow stained glass pane*
@@ -180,7 +183,7 @@ Function: `/function whimc:barrelbot/block/function/give`
 
 *note: still in the process of being transferred to the wand*
 
-**Basic Clone**: Clone the puzzle you are currently linked to, placing the new puzzle’s button at your feet. Found in the dev book on the **Clone** page.
+**Basic Clone**: Clone the puzzle you are currently linked to by going to the dev book **Clone** page and selecting start clone. You can create the new clone puzzle by selecting Clone > Paste Puzzle.
 
 **Cascade Clone**: Creates a 2-dimensional array of clones of the puzzle you are currently linked to. To perform a cascade clone:
    1) Link to a puzzle by selecting it with a puzzle wand
