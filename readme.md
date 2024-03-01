@@ -144,7 +144,8 @@ The puzzle editing interface is currently undergoing a major overhaul. All of th
 
 ## Puzzle Wand
 Command: `/loot give @s loot whimc:edit_wand`
-*if the @s gives a selector not allowed error, replace it with your username*
+
+*note: if the @s gives a "selector not allowed" error, replace it with your username*
 
 The wand allows you to tinker with the features of a puzzle. Simply **right click** while holding the wand to scan for an editable feature. If an editable feature is found, it will bring up an editing menu. To exit this menu, press the left shift button or **crouch**. You need to be out of interaction range with objects that you can open or press.
 
@@ -166,9 +167,11 @@ Scanning a puzzle button will automatically link you to that puzzle. The puzzle 
 
 
 Toggle size editor: allows you to edit
+
 *note: this feature currently does not have an icon, and is instead indicated by a yellow stained glass pane*
 
 Propagate changes: any changes made to this puzzle will be copied over to any clones of the puzzle as well
+
 *note: this feature is currently indicated by an orange stained glass pane*
 
 **Block Commands**
