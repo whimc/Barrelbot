@@ -1,6 +1,6 @@
 # Barrelbot
 
-_v0_4_
+_v0_5_
 
 ##  Dev book
 
