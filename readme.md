@@ -19,7 +19,7 @@ _v0_5_
 - Puzzle Functionality
 - Making a Puzzle
 
-[Tools](https://github.com/whimc/Barrelbot/edit/main/readme.md#tools)
+[Tools](https://github.com/whimc/Barrelbot/blob/main/readme.md#tools)
 - Puzzle Wand
 - Dev Book
 - Cloning
