@@ -2,6 +2,25 @@
 
 _v0_5_
 
+# Table of Contents
+[What is BarrelBot?] (link)
+[What is its Purpose?] (link)
+[Overview of Components] (link)
+[How to Make and Use Puzzles] (link)
+
+
+## What is BarrelBot?
+
+## What is its Purpose?
+
+## Overview of Components
+
+## How to Make and Use Puzzles
+
+
+
+
+
 ##  Dev book
 
 To give yourself the dev book, type the following command chat (all developer functions are contained within this):
