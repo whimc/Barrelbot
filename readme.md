@@ -118,6 +118,7 @@ These configurable instructions include:
             * Right: ^-1 ^ ^
             * Up: ~ ~1 ~
             * Down: ~ ~-1 ~
+            * [for more information about minecraft coordinates](https://minecraft.fandom.com/wiki/Coordinates) 
     * {description:”  “}
         * The text that shows in the tooltip of the item
         * Just formatted plain text
@@ -199,9 +200,6 @@ You can reset all puzzles using Puzzle > Reset all puzzles.
 
 This will stop any puzzles that were left running and restore a puzzle’s item box to its original state.
 
-**Locking a puzzle**:
-
-*to be added*
 
 **Seeing and changing boundaries**: 
 
