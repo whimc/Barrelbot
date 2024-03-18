@@ -157,7 +157,7 @@ Functions can be pre-set and locked by placing a honeycomb onto the function blo
 
 ### Resource Pack
 
-*to be added*
+The resource pack is a folder on the backend that holds all the custom textures/models/other assets used for barrelbots. Examples of what is held in the resource pack include the face of the barrel bot or the icons for the instructions. 
 
 ## How to Make and Use Puzzles
 
@@ -211,13 +211,9 @@ Boundaries are set by placing **light blocks** with a **light level of 0**. When
 
 To add a barrelbot or dispenser bot to the puzzle, make sure you are first linked to the puzzle or in the puzzle boundry (which automatically will cause the barrelbot to link to the puzzle). Then simply place the barrelbot/dispenser bot as specified above, and it will then be automatically linked to the puzzle. 
 
-**Attaching instructions to a puzzle**:
+**Attaching instructions to a puzzle/Setting Puzzle Itemse**:
 
-In order to attach instructions to a puzzle, you can create the instructions using the dev book (as specified above) and then place them into the shulker box. 
-
-**Setting Puzzle Items**:
-
-If you want to restrict a puzzle to only allow a specific set of items, you can do the following:
+If you want to restrict a puzzle to only allow a specific set of items or add instructions to a puzzle, you can do the following:
 
 1. Keep track of which direction you were facing when you spawned the puzzle (you can check this by pressing f3+b, and a blue line will appear facing the direction the puzzle entity is facing
 2. Put a yellow shulker box (or other container block) 1 block behind and 1 block below the puzzle
