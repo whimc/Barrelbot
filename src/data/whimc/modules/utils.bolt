@@ -31,16 +31,16 @@ class WandPage:
         #   (P.S) the job is adding the command to add the button to storage. The different cases correspond to whether the button has a command, page link, both, or neither
         if button.command != "" and button.page_link == "":
             append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
-                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:barrier",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",hover_text:button.hover_text}
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",hover_text:button.hover_text}
         elif button.command == "" and button.page_link != "":
             append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
-                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:barrier",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,page:f"{button.page_link}",hover_text:button.hover_text}
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,page:f"{button.page_link}",hover_text:button.hover_text}
         elif button.command != "" and button.page_link != "":
             append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
-                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:barrier",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",page:f"{button.page_link}",hover_text:button.hover_text}
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",page:f"{button.page_link}",hover_text:button.hover_text}
         else:
             append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
-                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:barrier",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,hover_text:button.hover_text}
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,hover_text:button.hover_text}
 
     def add_text(self, translation, scale, text_provider):
         append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
