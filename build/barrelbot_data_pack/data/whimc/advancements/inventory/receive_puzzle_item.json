@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "nbt": "{barrelbot:{puzzle_item:1b}}"
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "whimc:barrelbot/no_smuggle/receive_puzzle_item"
+    }
+  }
+  
