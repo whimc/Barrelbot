@@ -11,6 +11,7 @@
     { "predicate": {"custom_model_data": 130003}, "model": "whimc:barrelbot/ui/right_arrow"},
     { "predicate": {"custom_model_data": 130004}, "model": "whimc:barrelbot/ui/puzzle/touch_observer"},
     { "predicate": {"custom_model_data": 130005}, "model": "whimc:barrelbot/ui/barrelbot/lock"},
-    { "predicate": {"custom_model_data": 130006}, "model": "whimc:barrelbot/ui/puzzle/toggle_size_editor"}
+    { "predicate": {"custom_model_data": 130006}, "model": "whimc:barrelbot/ui/puzzle/toggle_size_editor"},
+    { "predicate": {"custom_model_data": 130007}, "model": "whimc:barrelbot/ui/puzzle/touch_blue"}
   ]
 }

@@ -142,7 +142,7 @@ def create_bot_success_conditions_page():
     
     for x in bot_success_conditions:
         button = WandButton(x["name"], [0.3, 0.3], x["custom_model_data"])
-        button.command = f'execute as @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage,predicate=whimc:barrelbot/match_edit_id] on passengers run data modify entity @s[type=marker] data.success_function set value {x["name"]}'
+        button.command = f'execute as @e[type=item_display,limit=1,tag=whimc.barrelbot,predicate=whimc:barrelbot/match_edit_id] on passengers run data modify entity @s[type=marker] data.success_function set value {x["name"]}'
         button.hover_text = x["display_name"]
         buttons.append(button)
 

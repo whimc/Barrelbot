@@ -26,6 +26,7 @@
 	{"type": "single","resource": "whimc:barrelbot/ui/right_arrow"},
 	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/touch_observer"},
 	{"type": "single","resource": "whimc:barrelbot/ui/barrelbot/lock"},
-	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/toggle_size_editor"}
+	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/toggle_size_editor"},
+	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/touch_blue"}
     ]
 }
