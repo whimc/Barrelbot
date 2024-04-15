@@ -17,4 +17,5 @@ scoreboard players set $success whimc.dummy 0
 function whimc:barrelbot/manager/check_success_condition with storage whimc:macro success_function
 
 #If success condition's met, party time
+scoreboard players operation $temp whimc.barrelbot.puzzle_type_id = @s whimc.barrelbot.puzzle_type_id
 execute if score $success whimc.dummy matches 1 run function whimc:barrelbot/manager/puzzle_success
