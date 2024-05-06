@@ -16,3 +16,5 @@ ride @s mount @e[type=item_display,tag=whimc.editor_base.init,limit=1,sort=neare
 execute on vehicle run function whimc:barrelbot/editor/edit_wand/setup_base
 
 scoreboard players operation @s whimc.barrelbot.edit_instance_id = $temp whimc.barrelbot.edit_instance_id
+
+tag @s add whimc.in_edit_menu

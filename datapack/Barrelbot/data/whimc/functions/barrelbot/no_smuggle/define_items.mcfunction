@@ -1,6 +1,8 @@
 #> whimc:barrelbot/no_smuggle/define_items
 #   Defines the items for a given puzzle
 
+scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
+
 data remove storage whimc:storage Items
 
 #Get data from block
