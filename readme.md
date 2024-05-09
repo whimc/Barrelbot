@@ -1,6 +1,6 @@
 # Barrelbot
 
-_v0_5_
+_v0_6_
 
 # Table of Contents
 [What is BarrelBot?](https://github.com/whimc/Barrelbot/blob/main/readme.md#what-is-barrelbot)
