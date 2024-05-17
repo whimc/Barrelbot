@@ -1,0 +1,21 @@
+[
+    {
+      "function": "minecraft:set_nbt",
+      "tag": "{barrelbot:{instruction:\"function\"}}"
+    },
+    {
+      "function": "minecraft:copy_nbt",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "whimc:storage"
+      },
+      "ops": [
+        {
+          "source": "item_modifier.id",
+          "target": "barrelbot.function_id",
+          "op": "replace"
+        }
+      ]
+    }
+  ]
+  

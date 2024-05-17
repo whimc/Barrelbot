@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/book"
+  },
+  "overrides": [
+    { "predicate": {"custom_model_data": 130000}, "model": "whimc:barrelbot/instructions/move_forward"},
+    { "predicate": {"custom_model_data": 130001}, "model": "whimc:barrelbot/instructions/turn_left"},
+    { "predicate": {"custom_model_data": 130002}, "model": "whimc:barrelbot/instructions/turn_right"},
+    { "predicate": {"custom_model_data": 130003}, "model": "whimc:barrelbot/instructions/end_code_block"},
+    { "predicate": {"custom_model_data": 130004}, "model": "whimc:barrelbot/instructions/if"},
+    { "predicate": {"custom_model_data": 130005}, "model": "whimc:barrelbot/instructions/loop"}
+
+  ]
+}

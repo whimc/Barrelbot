@@ -1,0 +1,25 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:placed_block",
+        "conditions": {
+          "item": {
+            "nbt": "{BlockEntityTag:{Items:[{tag:{whimc:{block:{}}}}]}}"
+          },
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "tag": "whimc:custom_blocks"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "whimc:barrelbot/block/place_custom_block"
+    }
+  }

@@ -1,0 +1,27 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:placed_block",
+        "conditions": {
+          "item": {
+            "nbt": "{whimc:{puzzle_button:1b}}"
+          },
+          "location": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                    "blocks": [
+                        "minecraft:stone_button"
+                      ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "whimc:barrelbot/block/puzzle_button/place"
+    }
+  }
