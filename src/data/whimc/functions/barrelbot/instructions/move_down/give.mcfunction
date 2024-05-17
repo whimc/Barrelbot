@@ -1,0 +1,3 @@
+#> whimc:barrelbot/instructions/move_down/give
+
+give @s book{display:{Name:'{"text":"Move Down","color":"#FFAA00","italic":false}',Lore:['{"text":"Moves the barrelbot down","color":"gray","italic":false}','{"text":"1 tile, if it is open","color":"gray","italic":false}','{"text":" "}','{"text":"Instruction","color":"blue","italic":false}']},CustomModelData:130006,barrelbot:{instruction:"move_down"}} 1

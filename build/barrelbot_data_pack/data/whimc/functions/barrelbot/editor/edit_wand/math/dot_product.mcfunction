@@ -1,0 +1,9 @@
+scoreboard players operation #dot.out whimc.dummy = #dot.x1 whimc.dummy
+scoreboard players operation #dot.out whimc.dummy *= #dot.x2 whimc.dummy
+scoreboard players operation #dot.temp whimc.dummy = #dot.y1 whimc.dummy
+scoreboard players operation #dot.temp whimc.dummy *= #dot.y2 whimc.dummy
+scoreboard players operation #dot.out whimc.dummy += #dot.temp whimc.dummy
+scoreboard players operation #dot.temp whimc.dummy = #dot.z1 whimc.dummy
+scoreboard players operation #dot.temp whimc.dummy *= #dot.z2 whimc.dummy
+scoreboard players operation #dot.out whimc.dummy += #dot.temp whimc.dummy
+scoreboard players operation #dot.out whimc.dummy /= #1000 whimc.const

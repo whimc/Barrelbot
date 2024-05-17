@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "whimc:barrelbot/execution_display/cursor"
+  }
+}

@@ -1,0 +1,149 @@
+#> Barrelbot bolt utils
+#   
+#
+
+from contextlib import contextmanager
+from nbtlib import parse_nbt
+import math
+
+## Edit wand: UI Page and Button commands
+
+class WandPage:
+    def __init__(self, _name):
+        self.name = _name
+        self.Buttons = []
+        append function whimc:barrelbot/editor/edit_wand/edit_mode/pages/register_pages:
+            function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{_name}"
+            data modify storage whimc:const WandPages append from storage whimc:storage Page
+
+        append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{_name}":
+            data modify storage whimc:storage Page set value {Buttons:[],Text:[]}
+            data modify storage whimc:storage Page.key set value f"{_name}"
+
+    def add_button(self, button, pos):
+        x_min = (int) ((pos[0] + button.size[0] / 2) * -1000)
+        y_min = (int) ((pos[1] - button.size[1] / 2) * 1000)
+        x_max = (int) ((pos[0] - button.size[0] / 2) * -1000)
+        y_max = (int) ((pos[1] + button.size[1] / 2) * 1000)
+
+
+        # This is probably a horrible way of coding this but idk bolt well enough to write it more concisely. It gets the job done
+        #   (P.S) the job is adding the command to add the button to storage. The different cases correspond to whether the button has a command, page link, both, or neither
+        if button.command != "" and button.page_link == "":
+            append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",hover_text:button.hover_text}
+        elif button.command == "" and button.page_link != "":
+            append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,page:f"{button.page_link}",hover_text:button.hover_text}
+        elif button.command != "" and button.page_link != "":
+            append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,command:f"{button.command}",page:f"{button.page_link}",hover_text:button.hover_text}
+        else:
+            append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+                data modify storage whimc:storage Page.Buttons append value {item:{id:"minecraft:white_stained_glass_pane",tag:{CustomModelData:button.cmd}},x_min:x_min,x_max:x_max,y_min:y_min,y_max:y_max,hover_text:button.hover_text}
+
+    def add_text(self, translation, scale, text_provider):
+        append function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+            formatted_translation = parse_nbt(f"[{translation[0]}f, {translation[1]}f, {translation[2]}f]")
+            formatted_scale = parse_nbt(f"[{scale[0]}f, {scale[1]}f, {scale[2]}f]")
+            #nbt = parse_nbt(f'{{data:{{transformation:{{translation:{formatted_translation},scale:{formatted_scale}}}}},text_provider:text_provider}}')
+
+            data modify storage whimc:storage Page.Text append value {data:{transformation:{translation:formatted_translation,scale:formatted_scale}},text_provider:text_provider}
+
+    def add_button_array(self, buttons, pos_center, spacing = 0):
+
+        # Get total width
+        total_width = spacing * (len(buttons) - 1)
+        for button in buttons:
+            total_width += button.size[0]
+
+        x = pos_center[0] - total_width / 2
+        y = pos_center[1]
+
+        # Insert all the buttons
+        for button in buttons:
+            self.add_button(button, [x + button.size[0] / 2, y])
+            x += button.size[0] + spacing
+
+
+class WandButton:
+    def __init__(self, _name, _size, _cmd):
+        self.name = _name
+        self.size = _size
+        self.cmd = _cmd
+        self.command = ""
+        self.page_link = ""
+        self.hover_text = ""
+
+    @contextmanager
+    def create_function(self):       # Creates a function and sets the command to be that function
+        self.command = f"function whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}"
+
+        function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
+            yield
+
+def multipage_array(buttons, page_size, name, display_name, backlink):
+    i = 0
+    page = 0
+    size = buttons[0].size
+    page_count = round(len(buttons) / page_size + 0.5)
+    while i < len(buttons):
+        page_buttons = buttons[i:min(i+page_size, len(buttons))]
+        prev_page_number = (page - 1) % page_count
+        prev_page_button = WandButton("previous_page", size, 130002)
+        prev_page_button.page_link = f"{name}_{prev_page_number}"
+        prev_page_button.hover_text = "Previous Page"
+        page_buttons.insert(0, prev_page_button)
+
+        next_page_number = (page + 1) % page_count
+        next_page_button = WandButton("next_page", size, 130003)
+        next_page_button.page_link = f"{name}_{next_page_number}"
+        next_page_button.hover_text = "Next Page"
+        page_buttons.append(next_page_button)
+
+
+        this_page = WandPage(f"{name}_{page}")
+        this_page.add_button_array(page_buttons, [0, -0.5])
+        this_page.add_text([0, 0.75, 0], [1, 1, 1], f'{{"text":"{display_name}","color":"yellow"}}')
+
+        page += 1
+        i += page_size
+
+success_conditions = []
+bot_success_conditions = []
+
+@contextmanager
+def add_success_condition(name, display_name, custom_model_data = 0):
+    function f"whimc:barrelbot/success_conditions/{name}":
+        yield
+
+    success_conditions.append({"name": name, "display_name": display_name, "custom_model_data": custom_model_data})
+
+@contextmanager
+def add_bot_success_condition(name, display_name, custom_model_data = 0):
+    function f"whimc:barrelbot/bot_success_conditions/{name}":
+        yield
+
+    bot_success_conditions.append({"name": name, "display_name": display_name, "custom_model_data": custom_model_data})
+
+def create_success_conditions_page():
+    buttons = []
+    
+    for x in success_conditions:
+        button = WandButton(x["name"], [0.3, 0.3], x["custom_model_data"])
+        button.command = f'data modify entity @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage,predicate=whimc:barrelbot/match_edit_id] data.success_function set value {x["name"]}'
+        button.hover_text = x["display_name"]
+        buttons.append(button)
+
+    multipage_array(buttons, 5, "success_conditions", "Success Conditions", "puzzle")
+
+def create_bot_success_conditions_page():
+    buttons = []
+    
+    for x in bot_success_conditions:
+        button = WandButton(x["name"], [0.3, 0.3], x["custom_model_data"])
+        button.command = f'execute as @e[type=item_display,limit=1,tag=whimc.barrelbot,predicate=whimc:barrelbot/match_edit_id] on passengers run data modify entity @s[type=marker] data.success_function set value {x["name"]}'
+        button.hover_text = x["display_name"]
+        buttons.append(button)
+
+    multipage_array(buttons, 5, "bot_success_conditions", "Success Conditions", "barrelbot")
