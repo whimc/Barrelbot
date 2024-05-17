@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "whimc:barrelbot/ui/right_arrow"
-  }
-}

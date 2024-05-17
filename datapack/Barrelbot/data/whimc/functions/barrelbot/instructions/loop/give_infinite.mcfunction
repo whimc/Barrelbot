@@ -1,3 +1,0 @@
-#> whimc:barrelbot/instructions/loop/give_infinite
-
-give @s book{display:{Name:'{"text":"Infinite Loop","color":"#FFF385","italic":false}',Lore:['[{"text":"Repeats the next code block ","color":"gray","italic":false},{"text":"infinite","color":"gold","bold":true,"italic":false},{"text":" times","color":"gray","bold":false,"italic":false}]','{"text":" "}','{"text":"Instruction","color":"blue","italic":false}']},CustomModelData:130005,barrelbot:{instruction:"loop","cycles":-1}} 1

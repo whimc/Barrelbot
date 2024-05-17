@@ -1,3 +1,0 @@
-#> whimc:barrelbot/instructions/if/give
-
-$give @s book{display:{Name:'{"text":"If Statement","color":"#FF4F67","italic":false}',Lore:['{"text":"Runs the following code block if the condition is met","color":"gray","italic":false}','{"text":" "}','[{"text":"Condition: ","color":"gold","bold":true,"italic":false},{"text":"$(description)","color":"white","bold":false,"italic":false}]','{"text":" "}','{"text":"Instruction","color":"blue","italic":false}']},CustomModelData:130004,barrelbot:{instruction:"if",condition:"$(condition)"}} 1
