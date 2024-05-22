@@ -43,4 +43,7 @@ scoreboard players set #MAX_RECURSION_DEPTH whimc.const 32
 scoreboard players set #DISPLAY_WIDTH whimc.const 9
 scoreboard players set #EDITOR_DISPLAY_DISTANCE whimc.const 1250
 scoreboard players set #-1 whimc.const -1
+scoreboard players set #2 whimc.const 2
 scoreboard players set #1000 whimc.const 1000
+forceload add 0 0
+schedule function whimc:technical/load/summon_entities 5s

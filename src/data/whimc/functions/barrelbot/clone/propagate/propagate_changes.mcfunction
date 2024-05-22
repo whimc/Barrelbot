@@ -43,5 +43,6 @@ scoreboard players operation $vol_z whimc.dummy = $size_z whimc.dummy
 
 
 #Propagate changes
+data modify storage whimc:macro Pos2 set from storage whimc:macro Pos
 execute positioned as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] run function whimc:barrelbot/clone/propagate/clone_details
 

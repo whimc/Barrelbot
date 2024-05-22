@@ -1,4 +1,5 @@
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
+execute align xyz as @e[type=text_display, tag=whimc.barrelbot.puzzle_manager, dx=0, dy=0, dz=0] at @s run function whimc:barrelbot/manager/delete_puzzle
 execute store result score $paste_x whimc.dummy run data get entity @s Pos[0]
 execute store result score $paste_y whimc.dummy run data get entity @s Pos[1]
 execute store result score $paste_z whimc.dummy run data get entity @s Pos[2]

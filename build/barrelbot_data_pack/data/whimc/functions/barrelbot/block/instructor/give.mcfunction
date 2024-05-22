@@ -1,0 +1,1 @@
+give @s yellow_shulker_box{display: {Name: '{"text":"Instructor","color":"aqua","italic":false}'}, BlockEntityTag: {Items: [{id: "minecraft:barrier", Count: 1b, Slot: 0b, tag: {whimc: {block: {id: "instructor"}}}}]}, CustomModelData: 130000}

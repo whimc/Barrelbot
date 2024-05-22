@@ -3,11 +3,11 @@ import whimc:utils as utils
 ## PUZZLE SUCCESS CONDITIONS
 
 # Succeed if all barrelbots are on green
-with utils.add_success_condition("touch_green", "Touch Green", 130001):
+with utils.add_success_condition("touch_green", "Touch Green"):
     scoreboard players set $success whimc.dummy 1
     execute as @e[type=item_display,tag=whimc.barrelbot,tag=!whimc.dispenser_bot,predicate=whimc:barrelbot/match_id] at @s unless block ~ ~-1 ~ minecraft:lime_concrete run scoreboard players set $success whimc.dummy 0
 
-with utils.add_success_condition("touch_observer", "Touch Observer",130004):
+with utils.add_success_condition("touch_observer", "Touch Observer"):
     scoreboard players set $success whimc.dummy 1
     execute as @e[type=item_display,tag=whimc.barrelbot,tag=!whimc.dispenser_bot,predicate=whimc:barrelbot/match_id] at @s unless block ~ ~-1 ~ minecraft:observer run scoreboard players set $success whimc.dummy 0
 
@@ -29,15 +29,15 @@ with utils.add_success_condition("defer", "Defer to Barrelbots"):
 ## BOT SUCCESS CONDITIONS
 
 # Succeeds if the barrelbot is on lime concrete
-with utils.add_bot_success_condition("touch_green", "Touch Green", 130001):
+with utils.add_bot_success_condition("touch_green", "Touch Green"):
     scoreboard players set $success whimc.dummy 0
     execute if block ~ ~-1 ~ lime_concrete run scoreboard players set $success whimc.dummy 1
 
-with utils.add_bot_success_condition("touch_blue", "Touch Blue", 130007):
+with utils.add_bot_success_condition("touch_blue", "Touch Blue"):
     scoreboard players set $success whimc.dummy 0
     execute if block ~ ~-1 ~ light_blue_concrete run scoreboard players set $success whimc.dummy 1
 
-with utils.add_bot_success_condition("touch_observer", "Touch Observer", 130004):
+with utils.add_bot_success_condition("touch_observer", "Touch Observer"):
     execute store result score $success whimc.dummy if block ~ ~-1 ~ observer
 
 
