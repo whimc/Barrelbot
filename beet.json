@@ -13,5 +13,5 @@
     },
     "pipeline": ["mecha"],
     "output": "build",
-    "require": ["bolt"]
+    "require": ["bolt", "bolt_expressions", "kmc.item"]
 }

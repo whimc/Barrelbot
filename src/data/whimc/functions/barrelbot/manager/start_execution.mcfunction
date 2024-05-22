@@ -14,3 +14,4 @@ function whimc:barrelbot/manager/assign_ids
 
 execute on passengers run data modify entity @s data.functions set from storage whimc:storage functions
 
+function ./assign_instructors

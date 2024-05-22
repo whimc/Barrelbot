@@ -26,4 +26,5 @@ scoreboard players operation $max_source_z whimc.dummy = $real_max_z whimc.dummy
 scoreboard players operation $vol_x whimc.dummy = $size_x whimc.dummy
 scoreboard players operation $vol_y whimc.dummy = $size_y whimc.dummy
 scoreboard players operation $vol_z whimc.dummy = $size_z whimc.dummy
+data modify storage whimc:macro Pos2 set from storage whimc:macro Pos
 execute positioned as @e[type=text_display, distance=0.1.., tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_puzzle_type_id] run function whimc:barrelbot/clone/propagate/clone_details

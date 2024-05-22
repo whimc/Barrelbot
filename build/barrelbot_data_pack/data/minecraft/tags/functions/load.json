@@ -1,5 +1,7 @@
 {
-    "values" : [
-        "whimc:technical/load"
-    ]
+  "values": [
+    "barrelbot:init_expressions",
+    "whimc:technical/load",
+    "kmc.item:int/load"
+  ]
 }

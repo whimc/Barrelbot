@@ -1,0 +1,3 @@
+$execute positioned $(dest_min_x) $(dest_min_y) $(dest_min_z) as @e[type=minecraft:item_display,tag=whimc.barrelbot,dx=$(vol_x),dy=$(vol_y),dz=$(vol_z)] at @s run function whimc:barrelbot/bot/kill
+$execute positioned $(dest_min_x) $(dest_min_y) $(dest_min_z) as @e[type=minecraft:marker,tag=whimc.barrelbot.function,dx=$(vol_x),dy=$(vol_y),dz=$(vol_z)] at @s run function whimc:barrelbot/functions/delete
+$execute positioned $(dest_min_x) $(dest_min_y) $(dest_min_z) as @e[type=minecraft:item_display,tag=whimc.instructor,dx=$(vol_x),dy=$(vol_y),dz=$(vol_z)] at @s run function whimc:barrelbot/block/instructor/kill

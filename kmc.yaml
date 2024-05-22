@@ -1,0 +1,6 @@
+### This is a template for the kmc.yaml file you may need to include in the root directory of your workspace
+### The file is organized by module
+
+#> ITEM
+base_cmd: 130000                             # The custom model data value your project will start adding new models at
+reference_cmd_cache: "local"                  # For cross-project compatibility, the path to a referenced "root" cmd cache | Set to "local" to only store locally

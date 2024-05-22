@@ -1,6 +1,8 @@
 #> whimc:technical/load
 #   Sets up all necessary scoreboards
 
+from whimc:constants import display
+
 scoreboard objectives add whimc.timer dummy
 scoreboard objectives add whimc.click minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add whimc.click_wfoas minecraft.used:minecraft.warped_fungus_on_a_stick
@@ -62,4 +64,10 @@ scoreboard players set #MAX_RECURSION_DEPTH whimc.const 32
 scoreboard players set #DISPLAY_WIDTH whimc.const 9
 scoreboard players set #EDITOR_DISPLAY_DISTANCE whimc.const 1250
 scoreboard players set #-1 whimc.const -1
+scoreboard players set #2 whimc.const 2
 scoreboard players set #1000 whimc.const 1000
+
+#Entities
+forceload add 0 0
+schedule function ~/summon_entities 5s:
+    execute unless entity display run summon item_display 0.0 0.0 0.0 {Tags:["whimc.utility","global.ignore"], UUID: [I; 1974942878, 281495382, -2082167354, 2094789782]}

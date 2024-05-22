@@ -4,6 +4,7 @@
 
 from contextlib import contextmanager
 from nbtlib import parse_nbt
+from kmc.item:custom_item import add_texture
 import math
 
 ## Edit wand: UI Page and Button commands
@@ -67,13 +68,15 @@ class WandPage:
 
 
 class WandButton:
-    def __init__(self, _name, _size, _cmd):
+    def __init__(self, _name, _size):
         self.name = _name
+        self.namespaced_name = "whimc:barrelbot/ui/" + _name
         self.size = _size
-        self.cmd = _cmd
         self.command = ""
         self.page_link = ""
         self.hover_text = ""
+
+        self.cmd = add_texture(self.namespaced_name, "white_stained_glass_pane")
 
     @contextmanager
     def create_function(self):       # Creates a function and sets the command to be that function
@@ -90,13 +93,13 @@ def multipage_array(buttons, page_size, name, display_name, backlink):
     while i < len(buttons):
         page_buttons = buttons[i:min(i+page_size, len(buttons))]
         prev_page_number = (page - 1) % page_count
-        prev_page_button = WandButton("previous_page", size, 130002)
+        prev_page_button = WandButton("previous_page", size)
         prev_page_button.page_link = f"{name}_{prev_page_number}"
         prev_page_button.hover_text = "Previous Page"
         page_buttons.insert(0, prev_page_button)
 
         next_page_number = (page + 1) % page_count
-        next_page_button = WandButton("next_page", size, 130003)
+        next_page_button = WandButton("next_page", size)
         next_page_button.page_link = f"{name}_{next_page_number}"
         next_page_button.hover_text = "Next Page"
         page_buttons.append(next_page_button)
@@ -113,24 +116,24 @@ success_conditions = []
 bot_success_conditions = []
 
 @contextmanager
-def add_success_condition(name, display_name, custom_model_data = 0):
+def add_success_condition(name, display_name):
     function f"whimc:barrelbot/success_conditions/{name}":
         yield
 
-    success_conditions.append({"name": name, "display_name": display_name, "custom_model_data": custom_model_data})
+    success_conditions.append({"name": name, "display_name": display_name})
 
 @contextmanager
-def add_bot_success_condition(name, display_name, custom_model_data = 0):
+def add_bot_success_condition(name, display_name):
     function f"whimc:barrelbot/bot_success_conditions/{name}":
         yield
 
-    bot_success_conditions.append({"name": name, "display_name": display_name, "custom_model_data": custom_model_data})
+    bot_success_conditions.append({"name": name, "display_name": display_name})
 
 def create_success_conditions_page():
     buttons = []
     
     for x in success_conditions:
-        button = WandButton(x["name"], [0.3, 0.3], x["custom_model_data"])
+        button = WandButton(x["name"], [0.3, 0.3])
         button.command = f'data modify entity @e[type=marker,limit=1,tag=whimc.barrelbot.puzzle_storage,predicate=whimc:barrelbot/match_edit_id] data.success_function set value {x["name"]}'
         button.hover_text = x["display_name"]
         buttons.append(button)
@@ -141,7 +144,7 @@ def create_bot_success_conditions_page():
     buttons = []
     
     for x in bot_success_conditions:
-        button = WandButton(x["name"], [0.3, 0.3], x["custom_model_data"])
+        button = WandButton(x["name"], [0.3, 0.3])
         button.command = f'execute as @e[type=item_display,limit=1,tag=whimc.barrelbot,predicate=whimc:barrelbot/match_edit_id] on passengers run data modify entity @s[type=marker] data.success_function set value {x["name"]}'
         button.hover_text = x["display_name"]
         buttons.append(button)

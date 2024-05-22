@@ -1,0 +1,14 @@
+from kmc.item:custom_item import add_custom_model_data
+
+
+def update_atlas(texture):
+    merge atlas minecraft:blocks {
+        "sources": [
+            {"type": "single","resource": f"{texture}"}
+        ]
+    }
+
+add_custom_model_data("whimc:barrelbot/faces/instructor/neutral", "light_blue_stained_glass_pane")
+update_atlas("whimc:barrelbot/faces/instructor/neutral")
+update_atlas("whimc:barrelbot/faces/instructor/side")
+update_atlas("whimc:barrelbot/faces/instructor/top")
