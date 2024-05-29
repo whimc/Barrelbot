@@ -4,14 +4,89 @@
     "layer0": "minecraft:block/white_stained_glass"
   },
   "overrides": [
-    { "predicate": {"custom_model_data": 129999}, "model": "whimc:barrelbot/ui/close"},
-    { "predicate": {"custom_model_data": 130000}, "model": "whimc:barrelbot/ui/barrelbot/swap_mode"},
-    { "predicate": {"custom_model_data": 130001}, "model": "whimc:barrelbot/ui/puzzle/set_success_condition"},
-    { "predicate": {"custom_model_data": 130002}, "model": "whimc:barrelbot/ui/left_arrow"},
-    { "predicate": {"custom_model_data": 130003}, "model": "whimc:barrelbot/ui/right_arrow"},
-    { "predicate": {"custom_model_data": 130004}, "model": "whimc:barrelbot/ui/puzzle/touch_observer"},
-    { "predicate": {"custom_model_data": 130005}, "model": "whimc:barrelbot/ui/barrelbot/lock"},
-    { "predicate": {"custom_model_data": 130006}, "model": "whimc:barrelbot/ui/puzzle/toggle_size_editor"},
-    { "predicate": {"custom_model_data": 130007}, "model": "whimc:barrelbot/ui/puzzle/touch_blue"}
+    {
+      "predicate": {
+        "custom_model_data": 130000
+      },
+      "model": "whimc:barrelbot/ui/swap_mode"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130001
+      },
+      "model": "whimc:barrelbot/ui/set_bot_success_condition"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130002
+      },
+      "model": "whimc:barrelbot/ui/set_success_condition"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130003
+      },
+      "model": "whimc:barrelbot/ui/toggle_size_editor"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130004
+      },
+      "model": "whimc:barrelbot/ui/lock"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130005
+      },
+      "model": "whimc:barrelbot/ui/close"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130006
+      },
+      "model": "whimc:barrelbot/ui/touch_green"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130007
+      },
+      "model": "whimc:barrelbot/ui/touch_observer"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130008
+      },
+      "model": "whimc:barrelbot/ui/defer"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130009
+      },
+      "model": "whimc:barrelbot/ui/previous_page"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130010
+      },
+      "model": "whimc:barrelbot/ui/next_page"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130011
+      },
+      "model": "whimc:barrelbot/ui/touch_blue"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130012
+      },
+      "model": "whimc:barrelbot/ui/reset_puzzle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130013
+      },
+      "model": "whimc:barrelbot/ui/name_puzzle"
+    }
   ]
 }

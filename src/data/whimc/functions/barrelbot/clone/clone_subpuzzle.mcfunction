@@ -1,6 +1,8 @@
 #> whimc:barrelbot/clone/clone_subpuzzle
 #   Clones a subpuzzle
 
+## DEPRECATED - Not currently deleting this though in case I decide to dig up the code
+
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
 
 execute store result score $manager_offset_x whimc.dummy run data get entity @s Pos[0]

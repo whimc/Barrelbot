@@ -1,32 +1,184 @@
 {
-    "sources": [
-        {"type": "single","resource": "whimc:barrelbot/execution_display/barrelbot"},
-        {"type": "single","resource": "whimc:barrelbot/execution_display/cursor"},
-        {"type": "single","resource": "whimc:barrelbot/execution_display/function"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/move_forward"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/turn_left"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/turn_right"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/end_code_block"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/loop"},
-        {"type": "single","resource": "whimc:barrelbot/instructions/if"},
-        {"type": "single","resource": "whimc:barrelbot/faces/top"},
-        {"type": "single","resource": "whimc:barrelbot/faces/side"},
-        {"type": "single","resource": "whimc:barrelbot/faces/neutral"},
-        {"type": "single","resource": "whimc:barrelbot/faces/happy"},
-        {"type": "single","resource": "whimc:barrelbot/faces/short_circuited"},
-        {"type": "single","resource": "whimc:barrelbot/faces/dispenser/neutral"},
-	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_bottom"},
-	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_side"},
-	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_front"},
-	{"type": "single","resource": "whimc:barrelbot/block/barrelbot_top"},
-	{"type": "single","resource": "whimc:barrelbot/ui/close"},	
-	{"type": "single","resource": "whimc:barrelbot/ui/barrelbot/swap_mode"},
-	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/set_success_condition"},
-	{"type": "single","resource": "whimc:barrelbot/ui/left_arrow"},
-	{"type": "single","resource": "whimc:barrelbot/ui/right_arrow"},
-	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/touch_observer"},
-	{"type": "single","resource": "whimc:barrelbot/ui/barrelbot/lock"},
-	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/toggle_size_editor"},
-	{"type": "single","resource": "whimc:barrelbot/ui/puzzle/touch_blue"}
-    ]
+  "sources": [
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/execution_display/barrelbot"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/execution_display/cursor"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/execution_display/function"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/move_forward"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/turn_left"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/turn_right"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/end_code_block"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/loop"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/if"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/top"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/side"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/neutral"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/happy"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/short_circuited"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/dispenser/neutral"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/block/barrelbot_bottom"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/block/barrelbot_side"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/block/barrelbot_front"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/block/barrelbot_top"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_0"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_1"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_2"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_3"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_4"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_5"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_6"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_7"
+    },
+    {
+      "type": "single",
+      "resource": "kmc.ui:prompt_8"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/swap_mode"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/set_bot_success_condition"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/set_success_condition"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/toggle_size_editor"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/reset_puzzle"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/name_puzzle"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/lock"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/close"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/touch_green"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/touch_observer"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/defer"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/previous_page"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/next_page"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/touch_blue"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/instructor/neutral"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/instructor/side"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/faces/instructor/top"
+    }
+  ]
 }

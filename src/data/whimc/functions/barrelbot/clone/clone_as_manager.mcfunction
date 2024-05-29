@@ -38,6 +38,7 @@ execute rotated as @s run function whimc:barrelbot/clone/spawn_manager
 
 #Clone entities
 function whimc:barrelbot/manager/get_dimensions
+function whimc:barrelbot/clone/delete_old_entities with storage whimc:macro Pos
 function whimc:barrelbot/clone/clone_entities with storage whimc:macro Pos
 
 

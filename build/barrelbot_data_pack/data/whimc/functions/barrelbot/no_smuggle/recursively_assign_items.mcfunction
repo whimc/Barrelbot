@@ -1,4 +1,5 @@
 execute store result storage whimc:storage Items[0].tag.barrelbot.puzzle_id int 1 run scoreboard players get $temp whimc.barrelbot.puzzle_id
+execute store result storage whimc:storage Items[0].tag.barrelbot.instructor_id int 1 run scoreboard players get @s whimc.barrelbot.bot_id
 data modify storage whimc:storage Items[0].tag.barrelbot.puzzle_item set value 1b
 data modify storage whimc:storage Items append from storage whimc:storage Items[0]
 data remove storage whimc:storage Items[0]

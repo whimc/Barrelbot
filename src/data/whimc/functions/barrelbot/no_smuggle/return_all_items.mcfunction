@@ -7,10 +7,12 @@ execute unless data entity @s Inventory[{tag:{barrelbot:{puzzle_item:1b}}}] run 
 #Recursively return all items
 data modify storage whimc:storage Inventory set from entity @s Inventory
 execute store result score $item_count whimc.dummy if data storage whimc:storage Inventory[]
+scoreboard players set $item_returned whimc.dummy 0
 function whimc:barrelbot/no_smuggle/recursively_return_items
+execute if score $item_returned whimc.dummy matches 1 run tellraw @s ["",{"text":"[NOTICE] ","bold":true,"color":"red"},{"text":"You can't take a puzzle's items outside the puzzle! They've been returned to the instructor block.","color":"gold"}]
 
 #Clear all items
-clear @s minecraft:book{barrelbot:{puzzle_item:1b}}
+#clear @s minecraft:book{barrelbot:{puzzle_item:1b}}
 
 execute if data entity @s Inventory[{tag:{barrelbot:{puzzle_item:1b}}}]:
     data modify storage whimc:storage Inventory set from entity @s Inventory

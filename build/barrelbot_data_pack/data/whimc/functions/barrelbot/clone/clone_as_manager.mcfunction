@@ -22,4 +22,5 @@ execute store result score $min_y whimc.dummy run data get storage whimc:storage
 execute store result score $min_z whimc.dummy run data get storage whimc:storage bounding_box.min_z
 execute rotated as @s run function whimc:barrelbot/clone/spawn_manager
 function whimc:barrelbot/manager/get_dimensions
+function whimc:barrelbot/clone/delete_old_entities with storage whimc:macro Pos
 function whimc:barrelbot/clone/clone_entities with storage whimc:macro Pos

@@ -1,0 +1,25 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "player": {
+            "equipment": {
+              "offhand": {
+                "nbt": "{whimc_puzzle_wand:1b}"
+              }
+            }
+          },
+          "items": [
+            {
+              "nbt": "{whimc_puzzle_wand:1b}"
+            }
+          ]
+        }
+      }
+    },
+    "rewards": {
+      "function": "whimc:barrelbot/editor/edit_wand/press_f"
+    }
+  }
+  

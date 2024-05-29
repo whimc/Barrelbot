@@ -1,0 +1,62 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/writable_book"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 130000
+      },
+      "model": "kmc.ui:prompt_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130001
+      },
+      "model": "kmc.ui:prompt_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130002
+      },
+      "model": "kmc.ui:prompt_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130003
+      },
+      "model": "kmc.ui:prompt_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130004
+      },
+      "model": "kmc.ui:prompt_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130005
+      },
+      "model": "kmc.ui:prompt_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130006
+      },
+      "model": "kmc.ui:prompt_6"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130007
+      },
+      "model": "kmc.ui:prompt_7"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130008
+      },
+      "model": "kmc.ui:prompt_8"
+    }
+  ]
+}

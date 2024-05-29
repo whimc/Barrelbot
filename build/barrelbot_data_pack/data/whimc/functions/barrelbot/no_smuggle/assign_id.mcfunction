@@ -1,5 +1,6 @@
 tag @s add whimc.in_puzzle
-execute store result score @s whimc.barrelbot.in_puzzle_id run data get storage whimc:storage Inventory[{tag: {barrelbot: {puzzle_item: 1b}}}].tag.barrelbot.puzzle_id
+data modify storage whimc:storage Item set from storage whimc:storage Inventory[{tag: {barrelbot: {puzzle_item: 1b}}}]
+execute store result score @s whimc.barrelbot.in_puzzle_id run data get storage whimc:storage Item.tag.barrelbot.puzzle_id
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.in_puzzle_id
 scoreboard players operation @s whimc.barrelbot.puzzle_type_id = @e[type=text_display, tag=whimc.barrelbot.puzzle_manager, limit=1, predicate=whimc:barrelbot/match_id] whimc.barrelbot.puzzle_type_id
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.in_puzzle_id

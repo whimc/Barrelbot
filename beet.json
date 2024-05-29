@@ -1,0 +1,17 @@
+{
+    "author": "Kobe Duda",
+    "name": "barrelbot",
+    "data_pack": {
+        "load": ["src"]
+    },
+    "resource_pack": {
+        "load": ["src"]
+    },
+    "description": "WHIMC Barrelbot Pack",
+    "meta": {
+        "bolt": {"entrypoint":"whimc:main"}
+    },
+    "pipeline": ["mecha"],
+    "output": "build",
+    "require": ["bolt", "bolt_expressions", "kmc.item", "kmc", "kmc.ui"]
+}
