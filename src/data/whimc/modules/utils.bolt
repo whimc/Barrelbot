@@ -5,6 +5,7 @@
 from contextlib import contextmanager
 from nbtlib import parse_nbt
 from kmc.item:custom_item import add_texture
+from kmc.ui:text_input import get_text_input
 import math
 
 ## Edit wand: UI Page and Button commands
@@ -84,6 +85,14 @@ class WandButton:
 
         function f"whimc:barrelbot/editor/edit_wand/edit_mode/pages/{self.name}":
             yield
+
+    @contextmanager
+    def set_text_input(self):
+        with self.create_function():
+            execute on vehicle on passengers as @s[type=interaction] run data modify entity @s height set value 0.0f
+            with get_text_input(self.name):
+                execute on vehicle on passengers as @s[type=interaction] run data modify entity @s height set value 1.15f
+                yield
 
 def multipage_array(buttons, page_size, name, display_name, backlink):
     i = 0

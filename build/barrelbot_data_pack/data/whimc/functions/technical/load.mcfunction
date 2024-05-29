@@ -38,6 +38,7 @@ scoreboard objectives add whimc.math.wz dummy
 data modify storage whimc:const text.barrelbot.start set value '{"text":"Run","color":"green","bold":true}'
 data modify storage whimc:const text.barrelbot.stop set value '{"text":"Reset","color":"red","bold":true}'
 function whimc:barrelbot/editor/edit_wand/edit_mode/pages/register_pages
+execute unless data storage whimc:storage puzzle_names run data modify storage whimc:storage puzzle_names set value []
 scoreboard objectives add whimc.const dummy
 scoreboard players set #MAX_RECURSION_DEPTH whimc.const 32
 scoreboard players set #DISPLAY_WIDTH whimc.const 9
@@ -45,5 +46,3 @@ scoreboard players set #EDITOR_DISPLAY_DISTANCE whimc.const 1250
 scoreboard players set #-1 whimc.const -1
 scoreboard players set #2 whimc.const 2
 scoreboard players set #1000 whimc.const 1000
-forceload add 0 0
-schedule function whimc:technical/load/summon_entities 5s

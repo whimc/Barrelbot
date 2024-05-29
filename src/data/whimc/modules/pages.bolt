@@ -27,7 +27,7 @@ barrelbot_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot","
 puzzle_page = utils.WandPage("puzzle")
 puzzle_page.add_button(buttons.close, [0, -0.75])
 
-puzzle_page.add_button_array([buttons.toggle_size_editor, buttons.set_success_condition, buttons.reset_puzzle], [0, -0.35])
+puzzle_page.add_button_array([buttons.toggle_size_editor, buttons.set_success_condition, buttons.reset_puzzle, buttons.name_puzzle], [0, -0.35])
 
 # Function
 function_page = utils.WandPage("function")
