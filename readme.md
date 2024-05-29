@@ -1,6 +1,7 @@
 # Barrelbot
 
-_v0_6_
+_v0_8_
+29 May 2024
 
 # Table of Contents
 [What is BarrelBot?](https://github.com/whimc/Barrelbot/blob/main/readme.md#what-is-barrelbot)
