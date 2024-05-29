@@ -1,0 +1,23 @@
+{
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "creature_spawn_probability": 0,
+  "effects": {
+    "sky_color": 5901355,
+    "fog_color": 4396554,
+    "water_color": 8126244,
+    "water_fog_color": 809739,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.005
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [],
+  "has_precipitation": false
+}

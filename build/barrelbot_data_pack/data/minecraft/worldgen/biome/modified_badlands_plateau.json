@@ -1,0 +1,23 @@
+{
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "creature_spawn_probability": 0,
+  "effects": {
+    "sky_color": 14001491,
+    "fog_color": 13073736,
+    "water_color": 4596689,
+    "water_fog_color": 1671664,
+    "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:falling_dust"
+      },
+      "probability": 0.02
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [],
+  "has_precipitation": false
+}
