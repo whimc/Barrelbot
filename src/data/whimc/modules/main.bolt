@@ -2,3 +2,6 @@ import whimc:pages as pages
 import whimc:success_conditions as sc
 import whimc:models as model
 import kmc.item:container as container
+import kmc:player_storage as player_storage
+from kmc:display_entity import display
+import kmc.ui:text_input as text_input

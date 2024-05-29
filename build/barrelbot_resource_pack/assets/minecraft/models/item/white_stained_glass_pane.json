@@ -81,6 +81,12 @@
         "custom_model_data": 130012
       },
       "model": "whimc:barrelbot/ui/reset_puzzle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130013
+      },
+      "model": "whimc:barrelbot/ui/name_puzzle"
     }
   ]
 }

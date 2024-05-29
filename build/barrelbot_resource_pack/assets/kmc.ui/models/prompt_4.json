@@ -1,0 +1,8 @@
+{
+    "parent": "kmc.ui:prompt",
+	"texture_size": [32, 32],
+    "textures": {
+        "0": "kmc.ui:prompt_4",
+        "particle": "kmc.ui:prompt_4"
+    }
+}
