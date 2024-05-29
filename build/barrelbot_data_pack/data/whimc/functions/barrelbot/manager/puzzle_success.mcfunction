@@ -5,5 +5,5 @@ execute as @e[type=item_display, tag=whimc.barrelbot, tag=!whimc.dispenser_bot, 
 execute store result storage whimc:macro puzzle_type int 1 run scoreboard players get $temp whimc.barrelbot.puzzle_type_id
 function whimc:barrelbot/manager/get_puzzle_name
 execute as @a if score @s whimc.barrelbot.in_puzzle_id = $temp whimc.barrelbot.puzzle_id run tag @s add whimc.success_haver
-tellraw @a ["", {"text": "[Barrelbot] ", "bold": true, "color": "gray"}, {"selector": "@a[tag=whimc.success_haver]", "color": "gold"}, " has completed ", {"nbt": "puzzle_name", "storage": "whimc:storage", "color": "green"}, "!"]
+tellraw @a[tag=whimc.success_haver] ["", {"text": "[Barrelbot] ", "bold": true, "color": "gray"}, {"selector": "@a[tag=whimc.success_haver]", "color": "gold"}, " has completed ", {"nbt": "puzzle_name", "storage": "whimc:storage", "color": "green"}, "!"]
 tag @a[tag=whimc.success_haver] remove whimc.success_haver
