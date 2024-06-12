@@ -93,6 +93,18 @@
         "custom_model_data": 130014
       },
       "model": "whimc:barrelbot/ui/paste"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130015
+      },
+      "model": "whimc:barrelbot/ui/propagate_changes"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130016
+      },
+      "model": "whimc:barrelbot/ui/reset_all"
     }
   ]
 }

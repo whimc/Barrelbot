@@ -138,11 +138,19 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/ui/propagate_changes"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/lock"
     },
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/paste"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/reset_all"
     },
     {
       "type": "single",

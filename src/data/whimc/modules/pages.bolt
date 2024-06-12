@@ -11,9 +11,9 @@ append function whimc:barrelbot/editor/edit_wand/edit_mode/pages/register_pages:
 
 # Barrelbot
 barrelbot_page = utils.WandPage("barrelbot")
-#barrelbot_page.add_button(buttons.swap_mode, [0, -0.35])
-barrelbot_page.add_button_array([buttons.lock, buttons.swap_mode, buttons.set_bot_success_condition], [0, -0.35])
-barrelbot_page.add_button(buttons.close, [0, -0.75])
+#barrelbot_page.add_button(buttons.swap_mode, [0, -0.25])
+barrelbot_page.add_button_array([buttons.lock, buttons.swap_mode, buttons.set_bot_success_condition], [0, -0.25])
+barrelbot_page.add_button(buttons.close, [0, -0.65])
 barrelbot_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot","color":"yellow"}')
 
 # Sub-page: Barrelbot success conditions
@@ -25,16 +25,25 @@ barrelbot_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot","
 
 # Puzzle button
 puzzle_page = utils.WandPage("puzzle")
-puzzle_page.add_button(buttons.close, [0, -0.75])
+puzzle_page.add_button(buttons.close, [0, -0.65])
 
-puzzle_page.add_button_array([buttons.toggle_size_editor, buttons.set_success_condition, buttons.reset_puzzle, buttons.name_puzzle], [0, -0.35])
+puzzle_page.add_button_array([
+    buttons.toggle_size_editor,
+    buttons.set_success_condition,
+    buttons.reset_puzzle,
+    buttons.name_puzzle,
+    buttons.propagate
+], [0, -0.25])
 
 # Function
 function_page = utils.WandPage("function")
-function_page.add_button(buttons.lock, [0, -0.35])
-function_page.add_button(buttons.close, [0, -0.75])
+function_page.add_button(buttons.lock, [0, -0.25])
+function_page.add_button(buttons.close, [0, -0.65])
 
 # General
 general_page = utils.WandPage("general")
 general_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot Utilities","color":"yellow"}')
-general_page.add_button(buttons.paste, [0, 0])
+general_page.add_button_array([
+    buttons.paste,
+    buttons.reset_all
+], [0, -0.25])
