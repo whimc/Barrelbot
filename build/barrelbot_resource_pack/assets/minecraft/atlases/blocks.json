@@ -142,6 +142,10 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/ui/paste"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/close"
     },
     {
