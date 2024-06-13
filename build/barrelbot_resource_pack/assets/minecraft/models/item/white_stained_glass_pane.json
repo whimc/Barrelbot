@@ -123,6 +123,30 @@
         "custom_model_data": 130019
       },
       "model": "whimc:barrelbot/ui/instructions/move_forward"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130020
+      },
+      "model": "whimc:barrelbot/ui/instructions/turn_right"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130021
+      },
+      "model": "whimc:barrelbot/ui/instructions/turn_left"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130022
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_down"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130023
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_up"
     }
   ]
 }

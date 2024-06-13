@@ -39,6 +39,18 @@
         "custom_model_data": 130005
       },
       "model": "whimc:barrelbot/instructions/loop"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130006
+      },
+      "model": "whimc:barrelbot/instructions/move_down"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130007
+      },
+      "model": "whimc:barrelbot/instructions/move_up"
     }
   ]
 }

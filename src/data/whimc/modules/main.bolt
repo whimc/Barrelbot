@@ -1,7 +1,14 @@
 f = open("temp/instructions.txt", 'w')
 f.close()
 
-import whimc:instructions/move_forward as test
+import whimc:instructions/move_forward as mvf
+import whimc:instructions/turn_right as tr
+import whimc:instructions/turn_left as tl
+import whimc:instructions/move_down as md
+import whimc:instructions/move_up as mu
+
+
+
 import whimc:pages as pages
 import whimc:success_conditions as sc
 import whimc:models as model

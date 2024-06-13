@@ -1,1 +1,0 @@
-give @s book{display: {Name: '{"text":"Move Forward","color":"#FFAA00","italic":false}', Lore: ['{"text":"Moves the barrelbot forward","color":"gray","italic":false}', '{"text":"1 tile, if it is open","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130000, barrelbot: {instruction: "move_forward"}} 1

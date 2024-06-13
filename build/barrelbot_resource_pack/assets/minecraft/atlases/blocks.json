@@ -114,6 +114,14 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/instructions/move_down"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/move_up"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/swap_mode"
     },
     {
@@ -167,6 +175,22 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/move_forward"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/turn_right"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/turn_left"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/move_down"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/move_up"
     },
     {
       "type": "single",

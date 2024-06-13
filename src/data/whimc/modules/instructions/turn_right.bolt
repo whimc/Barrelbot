@@ -1,0 +1,6 @@
+from whimc:utils import Instruction
+
+turn_right = Instruction("turn_right", "Turn Right", ["Rotate the barrelbot"], "#00B3FF")
+
+with turn_right.set_function():
+    tp @s ~ ~ ~ ~90 ~
