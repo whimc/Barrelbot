@@ -105,6 +105,24 @@
         "custom_model_data": 130016
       },
       "model": "whimc:barrelbot/ui/reset_all"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130017
+      },
+      "model": "whimc:barrelbot/ui/instruction_menu"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130018
+      },
+      "model": "whimc:barrelbot/ui/block_menu"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130019
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_forward"
     }
   ]
 }

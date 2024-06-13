@@ -154,7 +154,19 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/ui/instruction_menu"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/block_menu"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/close"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/move_forward"
     },
     {
       "type": "single",

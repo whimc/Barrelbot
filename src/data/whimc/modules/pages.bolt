@@ -4,6 +4,7 @@
 
 import whimc:utils as utils
 import whimc:ui_buttons as buttons
+import PIL.Image as Image
 
 append function whimc:barrelbot/editor/edit_wand/edit_mode/pages/register_pages:
     data modify storage whimc:const WandPages set value []
@@ -45,5 +46,45 @@ general_page = utils.WandPage("general")
 general_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot Utilities","color":"yellow"}')
 general_page.add_button_array([
     buttons.paste,
-    buttons.reset_all
+    buttons.reset_all,
+    buttons.instruction_menu,
+    buttons.block_menu
 ], [0, -0.25])
+
+from beet import Texture
+from beet import Context
+
+# Instructions
+instructions_page = utils.WandPage("instructions")
+instructions_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Instructions","color":"yellow"}')
+instruction_buttons = []
+f = open("temp/instructions.txt", "rt")
+for line in f:
+    parsed_line = line.split(',')
+    id = parsed_line[0]
+    display_name = parsed_line[1][0:-1]
+
+    instruction_button = utils.WandButton("instructions/" + id, [0.2, 0.2])
+    instruction_button.hover_text = display_name
+    instruction_button.command = f"function whimc:barrelbot/instructions/{id}/give"
+    instruction_buttons.append(instruction_button)
+
+    # Generate button texture
+    #1 Load template image #
+    #2 Load instruction texture
+    #3 Paste instruction onto template
+    #4 Save to proper location
+    ui_template = Image.open(ctx.assets.textures["whimc:barrelbot/ui/template"].source_path).convert("RGBA")
+    instruction_texture = Image.open(ctx.assets.textures[f"whimc:barrelbot/instructions/{id}"].source_path).convert("RGBA")
+    ui_template.paste(instruction_texture, (0, 0), instruction_texture)
+    ctx.assets[f"whimc:barrelbot/ui/instructions/{id}"] = Texture(ui_template)
+
+
+f.close()
+instructions_page.add_button_array(instruction_buttons, [0.0, 0.0])
+
+
+
+# Blocks
+blocks_page = utils.WandPage("blocks")
+

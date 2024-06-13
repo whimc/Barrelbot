@@ -80,6 +80,16 @@ reset_all = utils.WandButton("reset_all", [0.3, 0.3])
 reset_all.hover_text = "Reset all puzzles"
 reset_all.command = "function whimc:barrelbot/dev/reset_all_puzzles"
 
+# Instruction menu
+instruction_menu = utils.WandButton("instruction_menu", [0.3, 0.3])
+instruction_menu.hover_text = "Get instruction items"
+instruction_menu.page_link = "instructions"
+
+# Block menu
+block_menu = utils.WandButton("block_menu", [0.3, 0.3])
+block_menu.hover_text = "Get blocks"
+block_menu.page_link = "blocks"
+
 ## General
 
 close = utils.WandButton("close", [0.25, 0.25])
