@@ -50,7 +50,10 @@ with name_puzzle.set_text_input():
         $data modify storage whimc:storage puzzle_names[{puzzle_id:$(puzzle_id)}].Name set from storage kmc:io text_input[0]
     tellraw @s ["",{"text":"[Notice] Your puzzle is now named ","color":"gray"},{"nbt":"text_input[0]","storage":"kmc:io","color":"gold"}]
     
-
+# Propagate Changes
+propagate = utils.WandButton("propagate_changes", [0.3, 0.3])
+propagate.hover_text = "Propagate changes to cloned puzzles"
+propagate.command = "function whimc:barrelbot/dev/propagate_changes"
 
 
 
@@ -60,9 +63,32 @@ lock = utils.WandButton("lock", [0.3, 0.3])
 with lock.create_function():
     scoreboard players operation $temp whimc.barrelbot.edit_instance_id = @s whimc.barrelbot.edit_instance_id
     execute as @e[type=marker,tag=whimc.barrelbot.function,predicate=whimc:barrelbot/match_edit_id] at @s positioned ~ ~1 ~ as @e[type=item_display,tag=whimc.function_display,distance=..0.001] run function whimc:barrelbot/functions/interact/lock
-#####    execute if score $locked whimc.dummy matches 0 run tellraw @s {}
+    execute if score $locked whimc.dummy matches 0 run tellraw @s {"text":"Function is now locked","color":"gold"}
+    execute if score $locked whimc.dummy matches 1 run tellraw @s {"text":"Function is now unlocked","color":"gray"}
 
 lock.hover_text = "Lock/Unlock Function"
+
+## Wand Menu
+
+# Paste puzzle
+paste = utils.WandButton("paste", [0.3, 0.3])
+paste.hover_text = "Paste linked puzzle"
+paste.command = "function whimc:barrelbot/dev/clone/paste_puzzle"
+
+# Reset all puzzles
+reset_all = utils.WandButton("reset_all", [0.3, 0.3])
+reset_all.hover_text = "Reset all puzzles"
+reset_all.command = "function whimc:barrelbot/dev/reset_all_puzzles"
+
+# Instruction menu
+instruction_menu = utils.WandButton("instruction_menu", [0.3, 0.3])
+instruction_menu.hover_text = "Get instruction items"
+instruction_menu.page_link = "instructions"
+
+# Block menu
+block_menu = utils.WandButton("block_menu", [0.3, 0.3])
+block_menu.hover_text = "Get blocks"
+block_menu.page_link = "blocks"
 
 ## General
 

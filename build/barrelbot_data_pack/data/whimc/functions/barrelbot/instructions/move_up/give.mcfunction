@@ -1,0 +1,1 @@
+give @s book{display: {Name: '{"text":"Move Up","color":"#FFAA00","italic":false}', Lore: ['{"text":"Moves the barrelbot up","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130007, barrelbot: {instruction: "move_up"}} 1

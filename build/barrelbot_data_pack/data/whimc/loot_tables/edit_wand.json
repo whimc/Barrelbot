@@ -14,7 +14,13 @@
                     "text": "Right click to edit puzzle features",
                     "color": "gray",
                     "italic": false
+                  },
+                  {
+                    "text": "Press 'f' to open menu",
+                    "color": "gray",
+                    "italic": false
                   }
+
                 ]
               },
               {

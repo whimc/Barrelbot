@@ -159,3 +159,37 @@ def create_bot_success_conditions_page():
         buttons.append(button)
 
     multipage_array(buttons, 5, "bot_success_conditions", "Success Conditions", "barrelbot")
+
+
+
+
+class Instruction:
+    def __init__(self, id_, display_name_, description_, color="white"):
+        self.id = id_
+        self.display_name = display_name_
+        self.namespaced_name = "whimc:barrelbot/instructions/" + id_
+        self.description = description_
+        self.cmd = add_texture(self.namespaced_name, "book")
+
+        # Build lore from description (should be a list of lines)
+        instruction_lore = []
+        for x in description_:
+            instruction_lore.append(f'{{"text":"{x}","color":"gray","italic":false}}')
+        instruction_lore.append('{"text":" "}')
+        instruction_lore.append('{"text":"Instruction","color":"blue","italic":false}')
+
+        formatted_name = f'{{"text":"{self.display_name}","color":"{color}","italic":false}}'
+
+        # Create give command
+        function f"whimc:barrelbot/instructions/{self.id}/give":
+            give @s book{display:{Name:formatted_name,Lore:instruction_lore},CustomModelData:self.cmd,barrelbot:{instruction:self.id}} 1
+
+        # Add to registry
+        f = open("temp/instructions.txt", 'at')
+        f.write(self.id + ',' + self.display_name + '\n')
+        f.close()
+
+    @contextmanager
+    def set_function(self):
+        function f"whimc:barrelbot/instructions/{self.id}/execute":
+            yield

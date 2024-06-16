@@ -1,6 +1,6 @@
 {
     "values": [
-        "minecraft:air",
+        "#whimc:air",
         "minecraft:barrel",
         "minecraft:dispenser"
     ]

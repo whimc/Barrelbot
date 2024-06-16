@@ -13,4 +13,3 @@ execute at @s[tag=!whimc.dispenser_bot] run data modify block ~ ~ ~ Items set fr
 scoreboard players operation $temp whimc.barrelbot.bot_id = @s whimc.barrelbot.bot_id
 execute at @s as @e[type=item_display, tag=whimc.execution_display, predicate=whimc:barrelbot/match_bot_id] run kill @s
 scoreboard players reset @s whimc.barrelbot.push_count
-scoreboard players reset @s whimc.barrelbot.puzzle_id

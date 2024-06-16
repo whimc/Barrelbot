@@ -87,6 +87,66 @@
         "custom_model_data": 130013
       },
       "model": "whimc:barrelbot/ui/name_puzzle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130014
+      },
+      "model": "whimc:barrelbot/ui/paste"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130015
+      },
+      "model": "whimc:barrelbot/ui/propagate_changes"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130016
+      },
+      "model": "whimc:barrelbot/ui/reset_all"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130017
+      },
+      "model": "whimc:barrelbot/ui/instruction_menu"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130018
+      },
+      "model": "whimc:barrelbot/ui/block_menu"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130019
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_forward"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130020
+      },
+      "model": "whimc:barrelbot/ui/instructions/turn_right"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130021
+      },
+      "model": "whimc:barrelbot/ui/instructions/turn_left"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130022
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_down"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130023
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_up"
     }
   ]
 }

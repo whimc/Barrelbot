@@ -11,7 +11,7 @@ execute anchored eyes positioned ^ ^ ^1.25 run function whimc:barrelbot/editor/e
 #Chair stuff
 ride @s dismount
 
-summon item_display ~ ~0.6 ~ {Tags:["whimc.editor_base","whimc.editor_base.init"],Passengers:[{id:"minecraft:interaction",Tags:["whimc.editor_click"],width:0.01f,height:1.15f}]}
+summon item_display ~ ~0.60001 ~ {Tags:["whimc.editor_base","whimc.editor_base.init"],Passengers:[{id:"minecraft:interaction",Tags:["whimc.editor_click"],width:0.01f,height:1.15f}]}
 ride @s mount @e[type=item_display,tag=whimc.editor_base.init,limit=1,sort=nearest]
 execute on vehicle run function whimc:barrelbot/editor/edit_wand/setup_base
 

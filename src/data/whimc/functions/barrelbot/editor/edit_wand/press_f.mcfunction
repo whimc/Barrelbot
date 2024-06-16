@@ -7,6 +7,7 @@ item replace entity @s weapon.mainhand from entity @e[type=item_display,tag=whim
 
 #TO-DO: Reset linkage to puzzle entity
 execute if entity @s[tag=whimc.in_edit_menu] run function ./edit_mode/erase_page
+scoreboard players reset $temp whimc.barrelbot.edit_instance_id
 scoreboard players reset @s whimc.barrelbot.edit_instance_id
 
 # Open menu

@@ -1,0 +1,9 @@
+from whimc:utils import Instruction
+
+move_down = Instruction("move_down", "Move Down", ["Moves the barrelbot down"], "#7E36D6")
+
+with move_down.set_function():
+    execute unless block ~ ~-1 ~ air run return 1
+
+    clone ~ ~ ~ ~ ~ ~ ~ ~-1 ~ masked move
+    tp @s ~ ~-1 ~
