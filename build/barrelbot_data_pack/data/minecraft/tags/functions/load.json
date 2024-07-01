@@ -3,9 +3,9 @@
     "barrelbot:init_expressions",
     "whimc:technical/load",
     "kmc.item:int/load",
-    "kmc/int/load/id",
-    "kmc/int/load/player_storage",
-    "kmc/int/load/scoreboards",
-    "kmc/int/load/forceload"
+    "kmc:int/load/id",
+    "kmc:int/load/player_storage",
+    "kmc:int/load/scoreboards",
+    "kmc:int/load/forceload"
   ]
 }

@@ -3,9 +3,6 @@
       "requirement": {
         "trigger": "minecraft:placed_block",
         "conditions": {
-          "item": {
-            "nbt": "{whimc:{puzzle_button:1b}}"
-          },
           "location": [
             {
               "condition": "minecraft:location_check",
@@ -15,6 +12,12 @@
                         "minecraft:stone_button"
                       ]
                 }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "nbt": "{whimc:{puzzle_button:1b}}"
               }
             }
           ]
