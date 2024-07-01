@@ -1,7 +1,36 @@
-#> whimc:barrelbot/no_smuggle/return_item
-#   Returns one item stack back to the instructor
+#> whimc:barrelbot/functions/display_arcs
+#   Displays all the arcs between functions and bots when a function is called
 
-scoreboard players set $item_returned whimc.dummy 1
+#> INPUT:
+#   - whimc:storage DisplayArcs
+
+data modify storage whimc:storage current_arc set from storage whimc:storage DisplayArcs[-1]
+
+# This is done now so the position can respond to any movements that the barrelbot made within the tick
+#execute if data storage whimc:storage {current_arc:{Pos2:"self"}} run say HI
+execute if data storage whimc:storage {current_arc:{Pos2:"self"}} run data modify storage whimc:storage current_arc.Pos2 set from entity @s Pos
+
+# Load in data
+execute store result score $x1 whimc.dummy run data get storage whimc:storage current_arc.Pos1[0] 1000
+execute store result score $y1 whimc.dummy run data get storage whimc:storage current_arc.Pos1[1] 1000
+execute store result score $z1 whimc.dummy run data get storage whimc:storage current_arc.Pos1[2] 1000
+
+execute store result score $x2 whimc.dummy run data get storage whimc:storage current_arc.Pos2[0] 1000
+execute store result score $y2 whimc.dummy run data get storage whimc:storage current_arc.Pos2[1] 1000
+execute store result score $z2 whimc.dummy run data get storage whimc:storage current_arc.Pos2[2] 1000
+# Do the thing
+function ./display_arc
+
+
+# Loop logic
+data remove storage whimc:storage DisplayArcs[-1]
+scoreboard players remove $arc_count whimc.dummy 1
+execute if score $arc_count whimc.dummy matches 1.. run function ~/
+
+
+
+############################# ARC DISPLAY LOGIC #####################################
+# Note: This is mostly copy-pasted from another function with some minor adjustments
 
 from whimc:constants import display
 from bolt_expressions import Scoreboard, Data
@@ -12,44 +41,9 @@ arclength = 500        # Spacing between particles for drawing the arc leading b
 storage = Data.storage(whimc:storage)
 macro = Data.storage(whimc:macro)
 
-#execute store result score $temp whimc.barrelbot.puzzle_id run data get storage whimc:storage Inventory[0].tag.barrelbot.puzzle_id
-#execute at @e[type=text_display,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_id] positioned ^1 ^ ^-1 run summon item ~ ~ ~ {Item:{id:"minecraft:stone",Count:1b},PickupDelay:100000000,Age:0,Tags:["whimc.item.init"]}
-#execute at @e[type=text_display,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_id] positioned ^ ^ ^-1 run particle end_rod ~ ~ ~ 0.05 0.05 0.05 0 1 normal
-#execute at @e[type=text_display,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_id] positioned ^ ^ ^-1 run playsound minecraft:entity.item.pickup block @a ~ ~ ~ 1.5 1
-
-#data modify entity @e[type=item,limit=1,tag=whimc.item.init] Item set from storage whimc:storage Inventory[0]
-#tag @e[type=item,limit=1,tag=whimc.item.init] remove whimc.item.init
-
-# Get position of player into score for displaying the arc leading back to the instructor
-data modify storage whimc:storage Pos set from entity @s Pos
-execute store result score $x1 whimc.dummy run data get storage whimc:storage Pos[0] 1000
-execute store result score $y1 whimc.dummy run data get storage whimc:storage Pos[1] 1000
-execute store result score $z1 whimc.dummy run data get storage whimc:storage Pos[2] 1000
-scoreboard players add $y1 whimc.dummy 1650
-
-execute store result score $temp whimc.barrelbot.bot_id run data get storage whimc:storage Inventory[0].tag.barrelbot.instructor_id
-data modify storage kmc.item:api item_stack set from storage whimc:storage Inventory[0]
-execute as @e[type=item_display,tag=whimc.instructor,predicate=whimc:barrelbot/match_bot_id] at @s:
-    function kmc.item:api/insert_item_block
-    playsound minecraft:entity.item.pickup block @a ~ ~ ~ 1.5 1
-
-    # Overflow handling - If the instructor is full, spawn the item stack as an entity
-    execute if score #item_count kmc.dummy matches 1..:
-        summon item ~ ~0.8 ~ {Item:{id:"minecraft:stone",Count:1b},PickupDelay:20,Age:0,Tags:["whimc.item.init"],Motion:[0.0d,0.25d,0.0d]}
-        data modify entity @e[type=item,limit=1,tag=whimc.item.init] Item set from storage kmc.item:api item_stack
-        tag @e[type=item,limit=1,tag=whimc.item.init] remove whimc.item.init
-
-    # Get position of instructor into score for particle display
-    data modify storage whimc:storage Pos set from entity @s Pos
-    execute store result score $x2 whimc.dummy run data get storage whimc:storage Pos[0] 1000
-    execute store result score $y2 whimc.dummy run data get storage whimc:storage Pos[1] 1000
-    execute store result score $z2 whimc.dummy run data get storage whimc:storage Pos[2] 1000
-    function ./display_item_return
-
-
 # Inputs x1/y1/z1 and x2/y2/z2
 #   Displays an arc of particles between the two input points
-function ./display_item_return:
+function ./display_arc:
     # Step 1: Find midpoint
     scoreboard players operation $midpoint.x whimc.dummy = $x1 whimc.dummy
     scoreboard players operation $midpoint.y whimc.dummy = $y1 whimc.dummy
@@ -85,13 +79,22 @@ function ./display_item_return:
     dummy['$theta'] = (int((180 / 3.141592) * arclength * 1000) / dummy['$r'])
 
     # Step 2: Execute at midpoint
-    execute summon marker:
+
+    # Get Pos1 into storage so we can get the right facing direction
+    execute store result storage whimc:macro start_x double 0.001 run scoreboard players get $x1 whimc.dummy
+    execute store result storage whimc:macro start_y double 0.001 run scoreboard players get $y1 whimc.dummy
+    execute store result storage whimc:macro start_z double 0.001 run scoreboard players get $z1 whimc.dummy
+
+    execute summon marker with storage whimc:macro:
         execute store result storage whimc:storage Pos[0] double 0.001 run scoreboard players get $midpoint.x whimc.dummy
         execute store result storage whimc:storage Pos[1] double 0.001 run scoreboard players get $midpoint.y whimc.dummy
         execute store result storage whimc:storage Pos[2] double 0.001 run scoreboard players get $midpoint.z whimc.dummy
         data modify entity @s Pos set from storage whimc:storage Pos
 
-        execute facing entity @s feet positioned as @s:
+        # Enforce proper rotation
+        $execute positioned $(start_x) $(start_y) $(start_z) facing entity @s feet positioned as @s run tp @s ~ ~ ~ ~ ~
+
+        execute at @s:
             # Shift downwards by d/2
             execute store result storage whimc:macro shift float 0.0005 run scoreboard players get $d whimc.dummy
             execute store result storage whimc:macro x1 float 0.001 run scoreboard players get $x1 whimc.dummy
@@ -111,13 +114,13 @@ function ./display_item_return:
                 kill @e[type=marker,limit=1,tag=whimc.temp]
 
                 macro.theta = dummy['$theta'] / 1000
-                $execute positioned ^ ^-$(shift) ^ facing $(x1) $(y1) $(z1) run function whimc:barrelbot/no_smuggle/draw_loop with storage whimc:macro
+                $execute positioned ^ ^-$(shift) ^ facing $(x1) $(y1) $(z1) run function whimc:barrelbot/functions/draw_loop with storage whimc:macro
 
 
         kill @s
 
 function ./draw_loop:
-    $particle end_rod ^ ^ ^$(r) 0 0 0 0 1 force
+    $particle dust 0.2 0.7 1.0 2 ^ ^ ^$(r) 0 0 0 0 1 force
     # Loop condition
     dummy['$angle'] += dummy['$theta']
-    $execute if score $angle whimc.dummy matches -90000..90000 rotated ~ ~$(theta) run function whimc:barrelbot/no_smuggle/draw_loop with storage whimc:macro
+    $execute if score $angle whimc.dummy matches -90000..90000 rotated ~ ~$(theta) run function whimc:barrelbot/functions/draw_loop with storage whimc:macro
