@@ -2,7 +2,7 @@
 #   Grabs the data from the block to load it into the marker
 
 execute if score $is_dispenser whimc.dummy matches 0 run data modify entity @s data.instructions set from block ~ ~ ~ Items
-data modify entity @s data.stack set value [{function:-1,step:0}]
+data modify entity @s data.stack set value [{function:-1,step:0,Pos:"self"}]
 data modify entity @s data.stack[0].length set from entity @s data.instructions[-1].Slot
 data modify block ~ ~ ~ Lock set value "heheheha"
 

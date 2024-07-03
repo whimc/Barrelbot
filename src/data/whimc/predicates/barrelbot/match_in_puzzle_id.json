@@ -1,0 +1,24 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "whimc.barrelbot.in_puzzle_id": {
+        "min": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$temp"
+          },
+          "score": "whimc.barrelbot.in_puzzle_id"
+        },
+        "max": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$temp"
+          },
+          "score": "whimc.barrelbot.in_puzzle_id"
+        }
+      }
+    }
+  }

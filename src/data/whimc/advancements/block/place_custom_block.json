@@ -3,9 +3,6 @@
       "requirement": {
         "trigger": "minecraft:placed_block",
         "conditions": {
-          "item": {
-            "nbt": "{BlockEntityTag:{Items:[{tag:{whimc:{block:{}}}}]}}"
-          },
           "location": [
             {
               "condition": "minecraft:location_check",
@@ -13,6 +10,12 @@
                 "block": {
                   "tag": "whimc:custom_blocks"
                 }
+              }
+            },
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "nbt": "{BlockEntityTag:{Items:[{tag:{whimc:{block:{}}}}]}}"
               }
             }
           ]

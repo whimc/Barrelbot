@@ -11,6 +11,8 @@
 
 scoreboard players operation $temp whimc.barrelbot.bot_id = @s whimc.barrelbot.bot_id
 scoreboard players set $queued_instruction whimc.dummy 0
+data modify storage whimc:storage DisplayArcs set value []
+scoreboard players set $arc_count whimc.dummy 0
 
 #Get stack data from the barrelbot
 function whimc:barrelbot/bot/grab_marker_data
@@ -51,6 +53,9 @@ execute at @s if block ~ ~-1 ~ black_concrete run function whimc:barrelbot/funct
 
 #Write data back to marker
 function whimc:barrelbot/bot/write_marker_data
+
+#Display function arcs if there are any to display
+execute if score $arc_count whimc.dummy matches 1.. run function whimc:barrelbot/functions/display_arcs
 
 #If there is a queued instruction, repeat this process. (This only goes if an if statement fails)
 execute if score $queued_instruction whimc.dummy matches 1 at @s run function whimc:barrelbot/bot/step
