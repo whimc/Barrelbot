@@ -147,6 +147,42 @@
         "custom_model_data": 130023
       },
       "model": "whimc:barrelbot/ui/instructions/move_up"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130024
+      },
+      "model": "whimc:barrelbot/ui/lock_bot"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130025
+      },
+      "model": "whimc:barrelbot/ui/instructions/death_ray"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130026
+      },
+      "model": "whimc:barrelbot/ui/instructions/place_block"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130027
+      },
+      "model": "whimc:barrelbot/ui/instructions/grab"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130028
+      },
+      "model": "whimc:barrelbot/ui/instructions/place"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130029
+      },
+      "model": "whimc:barrelbot/ui/instructions/grab_cake"
     }
   ]
 }

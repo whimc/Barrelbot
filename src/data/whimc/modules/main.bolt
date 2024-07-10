@@ -6,7 +6,11 @@ import whimc:instructions/turn_right as tr
 import whimc:instructions/turn_left as tl
 import whimc:instructions/move_down as md
 import whimc:instructions/move_up as mu
-
+import whimc:instructions/death_ray as dr
+import whimc:instructions/place_block as pb
+import whimc:instructions/grab as grab
+import whimc:instructions/grab_cake as grab_cake
+import whimc:instructions/place as place
 
 
 import whimc:pages as pages

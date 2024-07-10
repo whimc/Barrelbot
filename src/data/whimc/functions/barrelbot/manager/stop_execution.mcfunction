@@ -13,5 +13,12 @@ scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbo
 execute as @e[type=item_display,tag=whimc.barrelbot,predicate=whimc:barrelbot/match_id] at @s run function whimc:barrelbot/bot/reset
 
 #Delete all blocks placed by the barrelbot
-execute as @e[type=marker,tag=whimc.barrelbot.placed_block,predicate=whimc:barrelbot/match_id] at @s run function whimc:barrelbot/instructions/place_block/delete_block
+execute as @e[type=marker,tag=whimc.barrelbot.placed_block,predicate=whimc:barrelbot/match_id] at @s:
+    setblock ~ ~ ~ air
+    kill @s
 
+#Reset all blocks picked up by the barrelbot
+execute as @e[type=marker,tag=whimc.barrelbot.dropped_block,predicate=whimc:barrelbot/match_id] at @s:
+    with entity @s data.location:
+        $clone ~ ~ ~ ~ ~ ~ $(x) $(y) $(z) masked move
+    kill @s

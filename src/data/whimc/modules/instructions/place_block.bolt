@@ -1,0 +1,9 @@
+from whimc:utils import Instruction
+
+place_block = Instruction("place_block", "Place Block", ["Places Bock"], "#FAFAFA")
+
+with place_block.set_function():
+    execute store success score $block_placed whimc.dummy run setblock ^ ^ ^1 minecraft:black_stained_glass keep
+    execute if score $block_placed whimc.dummy matches 1 positioned ^ ^ ^1 summon marker:
+        tag @s add whimc.barrelbot.placed_block
+        scoreboard players operation @s whimc.barrelbot.puzzle_id = $temp whimc.barrelbot.puzzle_id

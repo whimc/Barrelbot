@@ -122,11 +122,35 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/instructions/death_ray"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/place_block"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/grab"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/grab_cake"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/place"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/swap_mode"
     },
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/set_bot_success_condition"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/lock_bot"
     },
     {
       "type": "single",
@@ -191,6 +215,26 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/move_up"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/death_ray"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/place_block"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/grab"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/grab_cake"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/place"
     },
     {
       "type": "single",

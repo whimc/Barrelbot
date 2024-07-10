@@ -67,6 +67,26 @@ class WandPage:
             self.add_button(button, [x + button.size[0] / 2, y])
             x += button.size[0] + spacing
 
+    def add_2d_array(self, buttons, pos_center, max_width, spacing = 0):
+        button_count = len(buttons)
+        
+        total_height = spacing * (len(buttons) - 1)
+        for index, button in enumerate(buttons):
+            if index % max_width == 0:
+                total_height += button.size[0]
+
+        x = pos_center[0]
+        y = pos_center[1] + total_height / 2
+        
+        i = 0
+        while i < button_count:
+            max_index = min(button_count + 1, i + max_width)
+            row = buttons[i:max_index]
+            self.add_button_array(row, (x, y), spacing)
+            i = max_index
+            y -= row[0].size[0] + spacing
+            
+
 
 class WandButton:
     def __init__(self, _name, _size):

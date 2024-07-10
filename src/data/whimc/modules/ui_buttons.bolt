@@ -17,6 +17,24 @@ set_bot_success_condition = utils.WandButton("set_bot_success_condition", [0.3, 
 set_bot_success_condition.page_link = "bot_success_conditions_0"
 set_bot_success_condition.hover_text = "Set Success Condition"
 
+# Toggle bot lock
+lock_bot = utils.WandButton("lock_bot", [0.3, 0.3])
+with lock_bot.create_function():
+    scoreboard players operation $temp whimc.barrelbot.edit_instance_id = @s whimc.barrelbot.edit_instance_id
+    execute as @e[type=item_display,tag=whimc.barrelbot,predicate=whimc:barrelbot/match_edit_id] at @s:
+        execute store result score $locked whimc.dummy if entity @s[tag=whimc.barrelbot.locked]
+        execute if score $locked whimc.dummy matches 0:
+            tag @s add whimc.barrelbot.locked
+            data modify block ~ ~ ~ Lock set value "i can put whatever i want here hahahahahaha"
+        execute if score $locked whimc.dummy matches 1:
+            tag @s remove whimc.barrelbot.locked
+            data remove block ~ ~ ~ Lock
+        
+    execute if score $locked whimc.dummy matches 0 run tellraw @s {"text":"Bot is now locked","color":"gold"}
+    execute if score $locked whimc.dummy matches 1 run tellraw @s {"text":"Bot is now unlocked","color":"gray"}
+
+lock_bot.hover_text = "Lock/Unlock Bot"
+
 ## Puzzle
 
 # Success condition

@@ -1,0 +1,26 @@
+from whimc:utils import Instruction
+
+death_ray = Instruction("death_ray", "Death Ray", ["Harness the UNMATCHED POWER OF THE SUN"], "#7E36D6")
+
+with death_ray.set_function():
+    scoreboard players set $steps whimc.dummy 3
+    execute if data storage whimc:storage current_step.reach store result score $steps whimc.dummy run data get storage whimc:storage current_step.reach
+
+    playsound minecraft:block.fire.extinguish block @a ~ ~ ~ 1 2
+
+    execute align xyz positioned ^ ^ ^1 run function ./recurse
+
+
+function ./recurse:
+    execute as @e[type=item_display,tag=whimc.barrelbot,dx=0,dy=0,dz=0,tag=!whimc.barrelbot.short_circuited] at @s run function whimc:barrelbot/bot/short_circuit
+
+
+
+    execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^-0.4 0.05 0.05 0.05 0 3
+    execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^-0.2 0.05 0.05 0.05 0 3
+    execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^ 0.05 0.05 0.05 0 3
+    execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^0.2 0.05 0.05 0.05 0 3
+    execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^0.4 0.05 0.05 0.05 0 3
+
+    scoreboard players remove $steps whimc.dummy 1
+    execute if score $steps whimc.dummy matches 1.. positioned ^ ^ ^1 if block ~ ~ ~ #whimc:death_rayable run function ./recurse
