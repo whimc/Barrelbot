@@ -5,4 +5,4 @@ execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.
 execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^0.2 0.05 0.05 0.05 0 3
 execute positioned ~0.5 ~0.5 ~0.5 run particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^0.4 0.05 0.05 0.05 0 3
 scoreboard players remove $steps whimc.dummy 1
-execute if score $steps whimc.dummy matches 1.. positioned ^ ^ ^1 if block ~ ~ ~ #whimc:death_rayable run function whimc:barrelbot/instructions/death_ray/recurse
+execute if score $steps whimc.dummy matches 1.. positioned ^ ^ ^1 if block ~ ~ ~ #whimc:death_rayable run function whimc:instructions/recurse

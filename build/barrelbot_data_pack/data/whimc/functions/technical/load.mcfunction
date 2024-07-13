@@ -13,6 +13,7 @@ scoreboard objectives add whimc.barrelbot.push_count dummy
 scoreboard objectives add whimc.barrelbot.in_puzzle_id dummy
 scoreboard objectives add whimc.barrelbot.puzzle_type_id dummy
 scoreboard objectives add whimc.barrelbot.edit_instance_id dummy
+scoreboard objectives add whimc.barrelbot.stack_height dummy
 scoreboard objectives add whimc.barrelbot.ui.stored_x dummy
 scoreboard objectives add whimc.barrelbot.ui.stored_y dummy
 scoreboard objectives add whimc.barrelbot.ui.stored_scale dummy

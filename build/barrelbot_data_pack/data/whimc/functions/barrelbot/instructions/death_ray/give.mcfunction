@@ -1,0 +1,1 @@
+give @s book{display: {Name: '{"text":"Death Ray","color":"#7E36D6","italic":false}', Lore: ['{"text":"Harness the UNMATCHED POWER OF THE SUN","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130008, barrelbot: {instruction: "death_ray"}} 1

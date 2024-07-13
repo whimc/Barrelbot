@@ -1,6 +1,7 @@
 #> whimc:barrelbot/manager/start_execution
 #   Begins execution of the given puzzle
 
+
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.puzzle_id
 
 #Change text

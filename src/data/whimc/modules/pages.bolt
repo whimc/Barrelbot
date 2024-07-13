@@ -13,7 +13,7 @@ append function whimc:barrelbot/editor/edit_wand/edit_mode/pages/register_pages:
 # Barrelbot
 barrelbot_page = utils.WandPage("barrelbot")
 #barrelbot_page.add_button(buttons.swap_mode, [0, -0.25])
-barrelbot_page.add_button_array([buttons.lock, buttons.swap_mode, buttons.set_bot_success_condition], [0, -0.25])
+barrelbot_page.add_button_array([buttons.lock_bot, buttons.swap_mode, buttons.set_bot_success_condition], [0, -0.25])
 barrelbot_page.add_button(buttons.close, [0, -0.65])
 barrelbot_page.add_text([0.0, 0.5, 0.1], [1.0, 1.0, 1.0], '{"text":"Barrelbot","color":"yellow"}')
 
@@ -81,7 +81,7 @@ for line in f:
 
 
 f.close()
-instructions_page.add_button_array(instruction_buttons, [0.0, 0.0])
+instructions_page.add_2d_array(instruction_buttons, [0.0, 0.0], 7)
 
 
 

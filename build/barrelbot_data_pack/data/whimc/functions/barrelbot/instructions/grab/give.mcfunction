@@ -1,0 +1,1 @@
+give @s book{display: {Name: '{"text":"Grab Any Block","color":"#00B3FF","italic":false}', Lore: ['{"text":"Picks up the block in front of the barrelbot","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130010, barrelbot: {instruction: "grab"}} 1
