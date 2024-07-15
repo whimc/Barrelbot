@@ -34,7 +34,7 @@ execute at @s:
     setblock ~ ~ ~ barrel[facing=up]{CustomName:'{"text":"Barrelbot"}'}
     data modify block ~ ~ ~ Items set from storage whimc:storage Items
     execute if entity @s[tag=whimc.barrelbot.locked]:
-        data modify block ~ ~ ~ Lock set value "i can put whatever i want here hahahahahaha"
+        data modify block ~ ~ ~ Lock set value "_LOCKTYPE: PERMALOCK"
         data modify block ~ ~ ~ Items set from storage whimc:storage BotItems
 
 

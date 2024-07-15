@@ -7,6 +7,8 @@ scoreboard players operation $temp whimc.barrelbot.bot_id = @s whimc.barrelbot.b
 #execute store success score $is_dispenser whimc.dummy if entity @s[tag=whimc.dispenser_bot]
 execute on passengers run function whimc:barrelbot/bot/load_instructions
 
+execute unless entity @s[tag=whimc.barrelbot.locked] run data modify block ~ ~ ~ Lock set value "_LOCKTYPE: RUNNING_"
+
 # Set up stack stuff
 scoreboard players set @s whimc.barrelbot.stack_height 0
 execute if block ~ ~1 ~ #whimc:stackable run function ./stack_loop
