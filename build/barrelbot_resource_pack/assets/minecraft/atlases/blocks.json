@@ -130,11 +130,11 @@
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/instructions/grab"
+      "resource": "whimc:barrelbot/instructions/grab_cake"
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/instructions/grab_cake"
+      "resource": "whimc:barrelbot/instructions/grab"
     },
     {
       "type": "single",
@@ -226,11 +226,11 @@
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/ui/instructions/grab"
+      "resource": "whimc:barrelbot/ui/instructions/grab_cake"
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/ui/instructions/grab_cake"
+      "resource": "whimc:barrelbot/ui/instructions/grab"
     },
     {
       "type": "single",
