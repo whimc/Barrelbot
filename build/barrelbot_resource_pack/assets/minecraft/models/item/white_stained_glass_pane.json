@@ -6,6 +6,12 @@
   "overrides": [
     {
       "predicate": {
+        "custom_model_data": 129999
+      },
+      "model": "whimc:barrelbot/ui/close"
+    },
+    {
+      "predicate": {
         "custom_model_data": 130000
       },
       "model": "whimc:barrelbot/ui/swap_mode"
@@ -189,6 +195,12 @@
         "custom_model_data": 130031
       },
       "model": "whimc:barrelbot/ui/instructions/mine_ice"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130033
+      },
+      "model": "whimc:barrelbot/ui/instructions/counter_loop"
     }
   ]
 }
