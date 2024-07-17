@@ -22,6 +22,7 @@ function ./scan:
         playsound minecraft:block.glass.break block @a ~ ~ ~ 1 1.3
         scoreboard players set $ray_length whimc.dummy 0
         if block ~ ~ ~ ice:
+            execute summon marker run function whimc:barrelbot/clone/get_pos
             scoreboard players set $ice_found whimc.dummy 1
             setblock ~ ~ ~ air
             data modify storage whimc:storage stack_entry set value {}

@@ -1,6 +1,6 @@
 from whimc:utils import Instruction
 
-climb = Instruction("climb", "Climbs one block if against a wall", ["Moves the barrelbot up"], "#FFAA00")
+climb = Instruction("climb", "Climb", ["Climbs one block if against a wall"], "#FFAA00")
 
 with climb.set_function():
     execute unless block ^ ^ ^1 #whimc:air:

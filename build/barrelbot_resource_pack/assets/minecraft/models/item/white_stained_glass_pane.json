@@ -189,12 +189,6 @@
         "custom_model_data": 130031
       },
       "model": "whimc:barrelbot/ui/instructions/mine_ice"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 130032
-      },
-      "model": "whimc:barrelbot/ui/instructions/fire"
     }
   ]
 }

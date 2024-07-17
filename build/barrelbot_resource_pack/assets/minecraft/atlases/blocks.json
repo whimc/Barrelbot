@@ -146,10 +146,6 @@
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/instructions/fire"
-    },
-    {
-      "type": "single",
       "resource": "whimc:barrelbot/ui/swap_mode"
     },
     {
@@ -247,10 +243,6 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/mine_ice"
-    },
-    {
-      "type": "single",
-      "resource": "whimc:barrelbot/ui/instructions/fire"
     },
     {
       "type": "single",

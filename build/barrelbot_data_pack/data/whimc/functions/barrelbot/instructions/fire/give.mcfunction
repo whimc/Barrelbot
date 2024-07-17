@@ -1,1 +1,0 @@
-give @s book{display: {Name: '{"text":"Fire","color":"#7E36D6","italic":false}', Lore: ['{"text":"FIRE FIRE FIRE","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130015, barrelbot: {instruction: "fire"}} 1

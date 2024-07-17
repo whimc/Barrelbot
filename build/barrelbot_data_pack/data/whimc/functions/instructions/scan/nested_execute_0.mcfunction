@@ -1,3 +1,4 @@
+execute summon marker run function whimc:barrelbot/clone/get_pos
 scoreboard players set $ice_found whimc.dummy 1
 setblock ~ ~ ~ air
 data modify storage whimc:storage stack_entry set value {}
