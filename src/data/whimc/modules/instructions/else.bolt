@@ -1,0 +1,6 @@
+from whimc:utils import Instruction
+
+instruction = Instruction("else", "Else", ["Runs the following code block if the previous if statement fails"], "#00B3FF")
+
+with instruction.set_function():
+    pass

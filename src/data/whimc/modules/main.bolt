@@ -12,6 +12,7 @@ import whimc:instructions/grab_cake as grab_cake
 import whimc:instructions/grab as grab
 import whimc:instructions/place as place
 import whimc:instructions/mine_ice as mine_ice
+import whimc:instructions/counter_loop as cl
 
 import whimc:pages as pages
 import whimc:success_conditions as sc

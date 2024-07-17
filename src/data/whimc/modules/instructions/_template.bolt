@@ -1,0 +1,6 @@
+from whimc:utils import Instruction
+
+instruction = Instruction("id", "Name", ["Desc"], "#00B3FF")
+
+with instruction.set_function():
+    pass
