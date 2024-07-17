@@ -1,4 +1,5 @@
 scoreboard players operation $temp whimc.barrelbot.puzzle_type_id = @s whimc.barrelbot.puzzle_type_id
+execute on passengers run data modify storage whimc:storage clone.success_function set from entity @s data.success_function
 function whimc:barrelbot/manager/get_dimensions
 scoreboard players operation $min_source_x whimc.dummy = $real_min_x whimc.dummy
 scoreboard players operation $min_source_y whimc.dummy = $real_min_y whimc.dummy

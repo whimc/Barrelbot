@@ -1,6 +1,6 @@
 from whimc:utils import Instruction
 
-place_block = Instruction("place_block", "Place Block", ["Places Bock"], "#FAFAFA")
+place_block = Instruction("place_block", "Place Block", ["Places Block"], "#FAFAFA")
 
 with place_block.set_function():
     execute store success score $block_placed whimc.dummy run setblock ^ ^ ^1 minecraft:black_stained_glass keep

@@ -48,12 +48,6 @@
     },
     {
       "predicate": {
-        "custom_model_data": 130007
-      },
-      "model": "whimc:barrelbot/instructions/move_up"
-    },
-    {
-      "predicate": {
         "custom_model_data": 130008
       },
       "model": "whimc:barrelbot/instructions/death_ray"
@@ -81,6 +75,24 @@
         "custom_model_data": 130012
       },
       "model": "whimc:barrelbot/instructions/grab_cake"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130013
+      },
+      "model": "whimc:barrelbot/instructions/climb"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130014
+      },
+      "model": "whimc:barrelbot/instructions/mine_ice"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130015
+      },
+      "model": "whimc:barrelbot/instructions/fire"
     }
   ]
 }

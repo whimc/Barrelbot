@@ -1,0 +1,1 @@
+give @s book{display: {Name: '{"text":"Mine Ice","color":"#00B3FF","italic":false}', Lore: ['{"text":"Shoots a mining laser to break ice","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130014, barrelbot: {instruction: "mine_ice"}} 1

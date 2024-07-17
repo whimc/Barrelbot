@@ -1,0 +1,63 @@
+from whimc:utils import Instruction
+
+mine_ice = Instruction("mine_ice", "Mine Ice", ["Shoots a mining laser to break ice"], "#00B3FF")
+
+with mine_ice.set_function():
+    scoreboard players set $ray_length whimc.dummy 3
+    scoreboard players set $ice_found whimc.dummy 0
+    execute positioned ^ ^ ^1 run function ./scan
+    execute if score $ice_found whimc.dummy matches 1 run function ./pickup_ice
+
+function ./scan:
+    execute unless block ~ ~ ~ #whimc:air unless block ~ ~ ~ #whimc:mineable_ice run return 0
+
+    particle dust_color_transition 0.4 0.8 1.0 1.8 0.3 0.4 0.7 ^ ^ ^-0.4 0.05 0.05 0.05 0 3
+    particle dust_color_transition 0.4 0.8 1.0 1.8 0.3 0.4 0.7 ^ ^ ^-0.2 0.05 0.05 0.05 0 3
+    particle dust_color_transition 0.4 0.8 1.0 1.8 0.3 0.4 0.7 ^ ^ ^ 0.05 0.05 0.05 0 3
+    particle dust_color_transition 0.4 0.8 1.0 1.8 0.3 0.4 0.7 ^ ^ ^0.2 0.05 0.05 0.05 0 3
+    particle dust_color_transition 0.4 0.8 1.0 1.8 0.3 0.4 0.7 ^ ^ ^0.4 0.05 0.05 0.05 0 3
+    
+    execute if block ~ ~ ~ #whimc:mineable_ice:
+
+        playsound minecraft:block.glass.break block @a ~ ~ ~ 1 1.3
+        scoreboard players set $ray_length whimc.dummy 0
+        if block ~ ~ ~ ice:
+            scoreboard players set $ice_found whimc.dummy 1
+            setblock ~ ~ ~ air
+            data modify storage whimc:storage stack_entry set value {}
+            execute store result storage whimc:storage stack_entry.x int 1 run data get storage whimc:storage Pos[0]
+            execute store result storage whimc:storage stack_entry.y int 1 run data get storage whimc:storage Pos[1]
+            execute store result storage whimc:storage stack_entry.z int 1 run data get storage whimc:storage Pos[2]
+
+        if block ~ ~ ~ packed_ice run setblock ~ ~ ~ ice
+        if block ~ ~ ~ blue_ice run setblock ~ ~ ~ packed_ice
+
+    scoreboard players remove $ray_length whimc.dummy 1
+    execute if score $ray_length whimc.dummy matches 1.. positioned ^ ^ ^1 run function ./scan
+
+
+
+block_tag whimc:mineable_ice {
+    "values": [
+        "minecraft:ice",
+        "minecraft:packed_ice",
+        "minecraft:blue_ice"
+    ]
+}
+
+function ./pickup_ice:
+    #Get position of next stack entry into macro
+    scoreboard players operation $temp whimc.dummy = @s whimc.barrelbot.stack_height
+    execute store result storage whimc:macro stack_height int 1 run scoreboard players add $temp whimc.dummy 1
+    scoreboard players set $stack_success whimc.dummy 0
+
+    with storage whimc:macro:
+        $execute store success score $stack_success whimc.dummy if block ~ ~$(stack_height) ~ #whimc:air run setblock ~ ~$(stack_height) ~ ice
+        
+    if score $stack_success whimc.dummy matches 1:
+        scoreboard players add @s whimc.barrelbot.stack_height 1
+
+        function whimc:barrelbot/bot/grab_marker_data
+        data modify storage whimc:storage marker_data.block_stack append from storage whimc:storage stack_entry
+        function whimc:barrelbot/bot/write_marker_data
+        

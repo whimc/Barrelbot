@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "whimc:barrelbot/instructions/move_up"
+    "layer0": "whimc:barrelbot/ui/instructions/mine_ice"
   }
 }

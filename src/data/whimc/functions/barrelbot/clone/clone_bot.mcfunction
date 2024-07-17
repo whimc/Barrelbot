@@ -3,6 +3,7 @@
 execute on passengers as @s[type=marker] run data modify storage whimc:storage marker_data set from entity @s data
 
 execute store result score $is_dispenser whimc.dummy if entity @s[tag=whimc.dispenser_bot]
+data modify storage whimc:storage bot_temp_data.Tags set from entity @s Tags
 
 execute store result score $bot_offset_x whimc.dummy run data get entity @s Pos[0]
 execute store result score $bot_offset_y whimc.dummy run data get entity @s Pos[1]

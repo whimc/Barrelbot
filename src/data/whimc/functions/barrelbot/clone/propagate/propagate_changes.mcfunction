@@ -1,6 +1,8 @@
 #> whimc:barrelbot/clone/propagate/propagate_changes
 #   Propagate any changes to the puzzle to all clones
 
+execute on passengers run data modify storage whimc:storage clone.success_function set from entity @s data.success_function
+
 #Get coordinates
 execute store result score $source_x whimc.dummy run data get entity @s Pos[0]
 execute store result score $source_y whimc.dummy run data get entity @s Pos[1]
@@ -45,4 +47,5 @@ scoreboard players operation $vol_z whimc.dummy = $size_z whimc.dummy
 #Propagate changes
 data modify storage whimc:macro Pos2 set from storage whimc:macro Pos
 execute positioned as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] run function whimc:barrelbot/clone/propagate/clone_details
+execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] on passengers run data modify entity @s data.success_function set from storage whimc:storage clone.success_function
 
