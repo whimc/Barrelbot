@@ -1,0 +1,7 @@
+from whimc:utils import Instruction
+
+set_fire = Instruction("set_fire", "Fire", ["FIRE FIRE FIRE"], "#7E36D6")
+
+with set_fire.set_function():
+    for i in range(1, 10):
+        setblock ^ ^ ^i fire

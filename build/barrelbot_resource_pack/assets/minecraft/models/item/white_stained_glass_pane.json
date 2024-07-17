@@ -144,12 +144,6 @@
     },
     {
       "predicate": {
-        "custom_model_data": 130023
-      },
-      "model": "whimc:barrelbot/ui/instructions/move_up"
-    },
-    {
-      "predicate": {
         "custom_model_data": 130024
       },
       "model": "whimc:barrelbot/ui/lock_bot"
@@ -183,6 +177,24 @@
         "custom_model_data": 130029
       },
       "model": "whimc:barrelbot/ui/instructions/grab_cake"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130030
+      },
+      "model": "whimc:barrelbot/ui/instructions/climb"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130031
+      },
+      "model": "whimc:barrelbot/ui/instructions/mine_ice"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130032
+      },
+      "model": "whimc:barrelbot/ui/instructions/fire"
     }
   ]
 }

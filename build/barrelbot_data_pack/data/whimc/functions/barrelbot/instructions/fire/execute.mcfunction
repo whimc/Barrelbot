@@ -1,0 +1,9 @@
+setblock ^ ^ ^1 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^2 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^3 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^4 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^5 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^6 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^7 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^8 <whimc:utils.Instruction object at 0x0000026CC6CD7010>
+setblock ^ ^ ^9 <whimc:utils.Instruction object at 0x0000026CC6CD7010>

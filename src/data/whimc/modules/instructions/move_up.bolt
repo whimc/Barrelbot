@@ -1,7 +1,0 @@
-from whimc:utils import Instruction
-
-move_up = Instruction("move_up", "Move Up", ["Moves the barrelbot up"], "#FFAA00")
-
-with move_up.set_function():
-    data modify storage whimc:macro destination set value "~ ~1 ~"
-    function whimc:barrelbot/bot/move

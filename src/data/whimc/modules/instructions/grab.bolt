@@ -1,8 +1,8 @@
 from whimc:utils import Instruction
 
-grab_cake = Instruction("grab", "Grab Any Block", ["Picks up the block in front of the barrelbot"], "#00B3FF")
+grab = Instruction("grab", "Grab Any Block", ["Picks up the block in front of the barrelbot"], "#00B3FF")
 
-with grab_cake.set_function():
+with grab.set_function():
     scoreboard players operation $temp whimc.dummy = @s whimc.barrelbot.stack_height
     execute store result storage whimc:macro stack_height int 1 run scoreboard players add $temp whimc.dummy 1
     scoreboard players set $stack_success whimc.dummy 0

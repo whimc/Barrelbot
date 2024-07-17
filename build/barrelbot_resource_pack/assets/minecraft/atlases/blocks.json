@@ -118,7 +118,7 @@
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/instructions/move_up"
+      "resource": "whimc:barrelbot/instructions/climb"
     },
     {
       "type": "single",
@@ -139,6 +139,14 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/instructions/place"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/mine_ice"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/fire"
     },
     {
       "type": "single",
@@ -214,7 +222,7 @@
     },
     {
       "type": "single",
-      "resource": "whimc:barrelbot/ui/instructions/move_up"
+      "resource": "whimc:barrelbot/ui/instructions/climb"
     },
     {
       "type": "single",
@@ -235,6 +243,14 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/place"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/mine_ice"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/fire"
     },
     {
       "type": "single",
