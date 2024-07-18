@@ -1,6 +1,6 @@
 from whimc:utils import Instruction, drawcube
 
-instruction = Instruction("if_block", "If Block Ahead", ["Runs the following code block if the condition is met", "", "Condition: If block ahead matches target block", "- Select target block by placing it", "   immediately AFTER this instruction", "- Modify scan location by placing", "   arrows before the target block"], "#FF4F67")
+instruction = Instruction("if_not_block", "If Block NOT Ahead", ["Runs the following code block if the condition is met", "", "Condition: If block ahead DOESN'T match target block", "- Select target block by placing it", "   immediately AFTER this instruction", "- Modify scan location by placing", "   arrows before the target block"], "#FF4F67")
 
 ## NOTE: CLEAR SLOT DATA AS SOON AS BLOCK CHECK IS EXECUTED
 
@@ -8,7 +8,7 @@ with instruction.set_function():
     # Perform all the iterations needed to compile the check
     scoreboard players set $block_found whimc.dummy 0
     scoreboard players set $block_success whimc.dummy 0
-    positioned ^ ^ ^1 run function ./check_loop
+    positioned ^ ^ ^1 run function ./check_not_loop
 
     #> FAILURE
     #If condition isn't met, iterate forward until the end of a code block is hit 
@@ -24,7 +24,7 @@ with instruction.set_function():
     execute at @s as @e[type=item_display,tag=whimc.execution_display_cursor,predicate=whimc:barrelbot/match_bot_id,scores={whimc.barrelbot.display_layer=0}] run function whimc:barrelbot/display/update_cursor
 
 
-function ./check_loop:
+function ./check_not_loop:
     particle end_rod
 
     # Get next instruction
@@ -45,29 +45,29 @@ function ./check_loop:
     # Block check
     align xyz with storage whimc:storage current_check:
         scoreboard players set $block_found whimc.dummy 1
-        $execute if block ~ ~ ~ $(id) run function whimc:instructions/block_success
+        $execute unless block ~ ~ ~ $(id) run function whimc:instructions/block_success
         execute if score $block_success whimc.dummy matches 0 run function ./block_failure
 
         data remove storage whimc:storage current_check
 
-function ./move_forward_found:
-    execute positioned ^ ^ ^1 run function ./check_loop
+function ./not_move_forward_found:
+    execute positioned ^ ^ ^1 run function ./check_not_loop
     data remove storage whimc:storage current_check
 
-function ./turn_left_found:
-    execute rotated ~-90 ~ run function ./check_loop
+function ./not_turn_left_found:
+    execute rotated ~-90 ~ run function ./check_not_loop
     data remove storage whimc:storage current_check
 
-function ./turn_right_found:
-    execute rotated ~90 ~ run function ./check_loop
+function ./not_turn_right_found:
+    execute rotated ~90 ~ run function ./check_not_loop
     data remove storage whimc:storage current_check
 
-function ./climb_found:
-    execute positioned ~ ~1 ~ run function ./check_loop
+function ./not_climb_found:
+    execute positioned ~ ~1 ~ run function ./check_not_loop
     data remove storage whimc:storage current_check
 
-function ./move_down_found:
-    execute positioned ~ ~-1 ~ run function ./check_loop
+function ./not_move_down_found:
+    execute positioned ~ ~-1 ~ run function ./check_not_loop
     data remove storage whimc:storage current_check
 
 

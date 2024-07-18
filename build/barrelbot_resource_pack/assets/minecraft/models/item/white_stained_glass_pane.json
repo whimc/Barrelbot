@@ -207,6 +207,12 @@
         "custom_model_data": 130034
       },
       "model": "whimc:barrelbot/ui/instructions/if_block"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130035
+      },
+      "model": "whimc:barrelbot/ui/instructions/if_not_block"
     }
   ]
 }

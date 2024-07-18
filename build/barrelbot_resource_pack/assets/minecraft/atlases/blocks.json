@@ -154,6 +154,10 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/instructions/if_not_block"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/swap_mode"
     },
     {
@@ -259,6 +263,10 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/if_block"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/if_not_block"
     },
     {
       "type": "single",
