@@ -10,6 +10,7 @@ function whimc:barrelbot/bot/grab_slot
 execute if data storage whimc:storage {current_step:{instruction:"loop"}} run scoreboard players add $code_block_depth whimc.dummy 1
 execute if data storage whimc:storage {current_step:{instruction:"if"}} run scoreboard players add $code_block_depth whimc.dummy 1
 execute if data storage whimc:storage {current_step:{instruction:"end_code_block"}} run scoreboard players remove $code_block_depth whimc.dummy 1
+execute if data storage whimc:storage {current_step:{instruction:"else"}} run scoreboard players remove $code_block_depth whimc.dummy 1
 execute if score $code_block_depth whimc.dummy matches ..-1 run scoreboard players set $end_found whimc.dummy 1
 
 #If at the end, stop iterating

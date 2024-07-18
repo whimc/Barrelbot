@@ -1,6 +1,6 @@
 from whimc:utils import Instruction
 
-instruction = Instruction("counter_loop", "Counter Loop", ["Runs a code block repeatedly", "", "Stack multiple to set the number", "Place 1 for infinite loop"], "#FFF385")
+instruction = Instruction("counter_loop", "Counter Loop", ["Runs a code block repeatedly", "", "- Stack multiple to set the number", "- Place 1 for infinite loop"], "#FFF385")
 
 with instruction.set_function():
     #Push loop to stack

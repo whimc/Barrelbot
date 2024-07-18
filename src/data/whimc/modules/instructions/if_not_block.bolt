@@ -1,0 +1,81 @@
+from whimc:utils import Instruction, drawcube
+
+instruction = Instruction("if_not_block", "If Block NOT Ahead", ["Runs the following code block if the condition is met", "", "Condition: If block ahead DOESN'T match target block", "- Select target block by placing it", "   immediately AFTER this instruction", "- Modify scan location by placing", "   arrows before the target block"], "#FF4F67")
+
+## NOTE: CLEAR SLOT DATA AS SOON AS BLOCK CHECK IS EXECUTED
+
+with instruction.set_function():
+    # Perform all the iterations needed to compile the check
+    scoreboard players set $block_found whimc.dummy 0
+    scoreboard players set $block_success whimc.dummy 0
+    positioned ^ ^ ^1 run function ./check_not_loop
+
+    #> FAILURE
+    #If condition isn't met, iterate forward until the end of a code block is hit 
+    scoreboard players set $code_block_depth whimc.dummy 0
+    execute if score $block_success whimc.dummy matches 0 run function whimc:barrelbot/instructions/if/failure
+    #execute if score $block_success whimc.dummy matches 0 run scoreboard players set $queued_instruction whimc.dummy 1
+
+    #> SUCCESS
+    #If condition check was successful, put code block on the call stack
+    execute if score $block_success whimc.dummy matches 1 run function whimc:barrelbot/instructions/if/success
+
+    # Update cursor
+    execute at @s as @e[type=item_display,tag=whimc.execution_display_cursor,predicate=whimc:barrelbot/match_bot_id,scores={whimc.barrelbot.display_layer=0}] run function whimc:barrelbot/display/update_cursor
+
+
+function ./check_not_loop:
+    particle end_rod
+
+    # Get next instruction
+    function whimc:barrelbot/functions/iterate
+    function whimc:barrelbot/bot/grab_slot
+    
+    data modify storage whimc:storage current_check set value {}
+    data modify storage whimc:storage current_check.id set from storage whimc:storage item_data.id
+    data modify storage whimc:storage current_check.instruction set from storage whimc:storage current_step.instruction
+    execute unless data storage whimc:storage current_check.id run data modify storage whimc:storage current_check.id set value "minecraft:air"
+    
+    if data storage whimc:storage {current_check:{instruction:"move_forward"}} run function ./move_forward_found
+    if data storage whimc:storage {current_check:{instruction:"turn_left"}} run function ./turn_left_found
+    if data storage whimc:storage {current_check:{instruction:"turn_right"}} run function ./turn_right_found
+    if data storage whimc:storage {current_check:{instruction:"climb"}} run function ./climb_found
+    if data storage whimc:storage {current_check:{instruction:"move_down"}} run function ./move_down_found
+    
+    # Block check
+    align xyz with storage whimc:storage current_check:
+        scoreboard players set $block_found whimc.dummy 1
+        $execute unless block ~ ~ ~ $(id) run function whimc:instructions/block_success
+        execute if score $block_success whimc.dummy matches 0 run function ./block_failure
+
+        data remove storage whimc:storage current_check
+
+function ./not_move_forward_found:
+    execute positioned ^ ^ ^1 run function ./check_not_loop
+    data remove storage whimc:storage current_check
+
+function ./not_turn_left_found:
+    execute rotated ~-90 ~ run function ./check_not_loop
+    data remove storage whimc:storage current_check
+
+function ./not_turn_right_found:
+    execute rotated ~90 ~ run function ./check_not_loop
+    data remove storage whimc:storage current_check
+
+function ./not_climb_found:
+    execute positioned ~ ~1 ~ run function ./check_not_loop
+    data remove storage whimc:storage current_check
+
+function ./not_move_down_found:
+    execute positioned ~ ~-1 ~ run function ./check_not_loop
+    data remove storage whimc:storage current_check
+
+
+function ./block_success:
+    scoreboard players set $block_success whimc.dummy 1
+    # Little green particle display
+    drawcube("dust 0.5 1 0.3 1", 10)
+
+function ./block_failure:
+    # Red particle display
+    drawcube("dust 0.7 0 0 1", 10)

@@ -13,6 +13,8 @@ import whimc:instructions/grab as grab
 import whimc:instructions/place as place
 import whimc:instructions/mine_ice as mine_ice
 import whimc:instructions/counter_loop as cl
+import whimc:instructions/if_block as ib
+import whimc:instructions/if_not_block as inb
 
 import whimc:pages as pages
 import whimc:success_conditions as sc
