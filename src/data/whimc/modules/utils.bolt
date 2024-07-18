@@ -213,3 +213,33 @@ class Instruction:
     def set_function(self):
         function f"whimc:barrelbot/instructions/{self.id}/execute":
             yield
+
+
+
+def drawline(p1, p2, steps, type):
+    stepX = (p2[0] - p1[0]) / (steps - 1)
+    stepY = (p2[1] - p1[1]) / (steps - 1)
+    stepZ = (p2[2] - p1[2]) / (steps - 1)
+
+    i = 0
+    while i < steps:
+        x = (p1[0] + i * stepX - 0.5) * 1.05 + 0.5
+        y = (p1[1] + i * stepY - 0.5) * 1.05 + 0.5
+        z = (p1[2] + i * stepZ - 0.5) * 1.05 + 0.5
+        particle type ~x ~y ~z 0 0 0 0 0 force
+
+        i += 1
+
+def drawcube(type, density):
+    drawline([0, 0, 0], [0, 0, 1], density, type)
+    drawline([0, 0, 0], [0, 1, 0], density, type)
+    drawline([0, 0, 0], [1, 0, 0], density, type)
+    drawline([0, 1, 1], [1, 1, 1], density, type)
+    drawline([0, 1, 1], [0, 0, 1], density, type)
+    drawline([0, 1, 1], [0, 1, 0], density, type)
+    drawline([1, 1, 0], [1, 1, 1], density, type)
+    drawline([1, 1, 0], [1, 0, 0], density, type)
+    drawline([1, 1, 0], [0, 1, 0], density, type)
+    drawline([1, 0, 1], [1, 0, 0], density, type)
+    drawline([1, 0, 1], [1, 1, 1], density, type)
+    drawline([1, 0, 1], [0, 0, 1], density, type)

@@ -150,6 +150,10 @@
     },
     {
       "type": "single",
+      "resource": "whimc:barrelbot/instructions/if_block"
+    },
+    {
+      "type": "single",
       "resource": "whimc:barrelbot/ui/swap_mode"
     },
     {
@@ -251,6 +255,10 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/ui/instructions/counter_loop"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/if_block"
     },
     {
       "type": "single",

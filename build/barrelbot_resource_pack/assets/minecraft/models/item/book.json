@@ -93,6 +93,12 @@
         "custom_model_data": 130016
       },
       "model": "whimc:barrelbot/instructions/counter_loop"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130017
+      },
+      "model": "whimc:barrelbot/instructions/if_block"
     }
   ]
 }

@@ -37,8 +37,6 @@ function whimc:barrelbot/bot/grab_slot
 function whimc:barrelbot/instructions/general/execute_instruction with storage whimc:storage current_step
 
 #Iterate forward
-#execute if score $in_code_block whimc.dummy matches 0 run function whimc:barrelbot/functions/iterate
-#execute if score $in_code_block whimc.dummy matches 1 run function whimc:barrelbot/instructions/loop/iterate
 execute store result score $step whimc.dummy run data get storage whimc:storage marker_data.stack[-1].step
 execute store result storage whimc:storage marker_data.stack[-1].step int 1 run scoreboard players add $step whimc.dummy 1
 

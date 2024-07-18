@@ -10,3 +10,5 @@ execute if data storage whimc:storage {current_step:{instruction:"end_code_block
 execute store result score $max_step whimc.dummy run data get storage whimc:storage marker_data.stack[-1].length
 execute if score $step whimc.dummy > $max_step whimc.dummy run scoreboard players set $iterate whimc.dummy 1
 execute if score $iterate whimc.dummy matches 1 run function whimc:barrelbot/instructions/loop/pop_stack
+
+#Weird edge case to guard against: If an if statement fails into a while loop leading into an if statement, don't repeat

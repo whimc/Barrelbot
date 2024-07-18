@@ -14,10 +14,8 @@ with place.set_function():
 
     execute if score $place_success whimc.dummy matches 1:
         # Pop location data from stack
-        function whimc:barrelbot/bot/grab_marker_data
         data modify storage whimc:storage stack_entry set from storage whimc:storage marker_data.block_stack[-1]
         data remove storage whimc:storage marker_data.block_stack[-1]
-        function whimc:barrelbot/bot/write_marker_data
 
         positioned ^ ^ ^1 summon marker:
             tag @s add whimc.barrelbot.dropped_block
