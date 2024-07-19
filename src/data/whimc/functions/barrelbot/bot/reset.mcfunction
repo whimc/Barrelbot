@@ -1,7 +1,7 @@
 #> whimc:barrelbot/bot/reset
 #   Resets the barrelbot to its starting state
 
-function whimc:barrelbot/bot/grab_marker_data    
+function whimc:barrelbot/bot/grab_marker_data
 
 data modify storage whimc:storage BotItems set from block ~ ~ ~ Items
 tag @s remove whimc.barrelbot.short_circuited
