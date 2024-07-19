@@ -36,11 +36,11 @@ function ./check_not_loop:
     data modify storage whimc:storage current_check.instruction set from storage whimc:storage current_step.instruction
     execute unless data storage whimc:storage current_check.id run data modify storage whimc:storage current_check.id set value "minecraft:air"
     
-    if data storage whimc:storage {current_check:{instruction:"move_forward"}} run function ./move_forward_found
-    if data storage whimc:storage {current_check:{instruction:"turn_left"}} run function ./turn_left_found
-    if data storage whimc:storage {current_check:{instruction:"turn_right"}} run function ./turn_right_found
-    if data storage whimc:storage {current_check:{instruction:"climb"}} run function ./climb_found
-    if data storage whimc:storage {current_check:{instruction:"move_down"}} run function ./move_down_found
+    if data storage whimc:storage {current_check:{instruction:"move_forward"}} run function ./not_move_forward_found
+    if data storage whimc:storage {current_check:{instruction:"turn_left"}} run function ./not_turn_left_found
+    if data storage whimc:storage {current_check:{instruction:"turn_right"}} run function ./not_turn_right_found
+    if data storage whimc:storage {current_check:{instruction:"climb"}} run function ./not_climb_found
+    if data storage whimc:storage {current_check:{instruction:"move_down"}} run function ./not_move_down_found
     
     # Block check
     align xyz with storage whimc:storage current_check:

@@ -1,4 +1,4 @@
-execute as @e[type=item_display, tag=whimc.barrelbot, dx=0, dy=0, dz=0, tag=!whimc.barrelbot.short_circuited] at @s run function whimc:barrelbot/bot/short_circuit
+execute align xyz as @e[type=item_display, tag=whimc.barrelbot, dx=0, dy=0, dz=0, tag=!whimc.barrelbot.short_circuited] at @s run function whimc:instructions/recurse/nested_execute_0
 particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^-0.4 0.05 0.05 0.05 0 3
 particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^-0.2 0.05 0.05 0.05 0 3
 particle dust_color_transition 0.95 0.2 0.1 1 1 0.6 0.6 ^ ^ ^ 0.05 0.05 0.05 0 3
