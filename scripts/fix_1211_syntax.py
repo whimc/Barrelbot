@@ -419,9 +419,9 @@ execute unless score @s whimc.barrelbot.in_puzzle_id matches 1.. run execute sto
 
 SCAN_MISMATCH_LEGACY = """data modify storage whimc:storage TempInventory set from storage whimc:storage Inventory
 $data remove storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_id:$(id)}}}}]
-$data remove storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_id:$(id)}}}}]
+$data remove storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_id:$(id)}}}]
 execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1b}}}}] run function whimc:barrelbot/no_smuggle/return_all_items
-execute if data storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_item:1b}}}}] run function whimc:barrelbot/no_smuggle/return_all_items"""
+execute if data storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_item:1b}}}] run function whimc:barrelbot/no_smuggle/return_all_items"""
 
 
 def fix_no_smuggle_legacy_paths(path: Path) -> bool:
