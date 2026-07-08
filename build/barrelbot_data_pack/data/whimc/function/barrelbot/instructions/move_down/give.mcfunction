@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Move Down',color:'#7E36D6',italic:false},minecraft:lore=[{text:'Moves the barrelbot down',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130006.0f]},minecraft:custom_data={barrelbot:{instruction: "move_down"}}] 1

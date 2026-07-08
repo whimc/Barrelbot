@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "vehicle": {
+      "type": "minecraft:item_display",
+      "tags": [
+        "whimc.editor_base"
+      ]
+    }
+  }
+}

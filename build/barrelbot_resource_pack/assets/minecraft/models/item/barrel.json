@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/barrel",
-  "overrides": [
-    { "predicate": {"custom_model_data": 130123}, "model": "whimc:barrelbot/block/barrelbot"}
-  ]
+  "parent": "minecraft:block/barrel"
 }

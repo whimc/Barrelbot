@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Place Block',color:'#FAFAFA',italic:false},minecraft:lore=[{text:'Places Block',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130009.0f]},minecraft:custom_data={barrelbot:{instruction: "place_block"}}] 1

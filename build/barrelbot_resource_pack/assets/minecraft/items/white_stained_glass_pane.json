@@ -1,0 +1,258 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/white_stained_glass_pane"
+    },
+    "entries": [
+      {
+        "threshold": 129999,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/close"
+        }
+      },
+      {
+        "threshold": 130000,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/swap_mode"
+        }
+      },
+      {
+        "threshold": 130001,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/set_bot_success_condition"
+        }
+      },
+      {
+        "threshold": 130002,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/set_success_condition"
+        }
+      },
+      {
+        "threshold": 130003,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/toggle_size_editor"
+        }
+      },
+      {
+        "threshold": 130004,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/lock"
+        }
+      },
+      {
+        "threshold": 130005,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/close"
+        }
+      },
+      {
+        "threshold": 130006,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/touch_green"
+        }
+      },
+      {
+        "threshold": 130007,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/touch_observer"
+        }
+      },
+      {
+        "threshold": 130008,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/defer"
+        }
+      },
+      {
+        "threshold": 130009,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/previous_page"
+        }
+      },
+      {
+        "threshold": 130010,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/next_page"
+        }
+      },
+      {
+        "threshold": 130011,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/touch_blue"
+        }
+      },
+      {
+        "threshold": 130012,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/reset_puzzle"
+        }
+      },
+      {
+        "threshold": 130013,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/name_puzzle"
+        }
+      },
+      {
+        "threshold": 130014,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/paste"
+        }
+      },
+      {
+        "threshold": 130015,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/propagate_changes"
+        }
+      },
+      {
+        "threshold": 130016,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/reset_all"
+        }
+      },
+      {
+        "threshold": 130017,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instruction_menu"
+        }
+      },
+      {
+        "threshold": 130018,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/block_menu"
+        }
+      },
+      {
+        "threshold": 130019,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/move_forward"
+        }
+      },
+      {
+        "threshold": 130020,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/turn_right"
+        }
+      },
+      {
+        "threshold": 130021,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/turn_left"
+        }
+      },
+      {
+        "threshold": 130022,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/move_down"
+        }
+      },
+      {
+        "threshold": 130024,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/lock_bot"
+        }
+      },
+      {
+        "threshold": 130025,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/death_ray"
+        }
+      },
+      {
+        "threshold": 130026,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/place_block"
+        }
+      },
+      {
+        "threshold": 130027,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/grab"
+        }
+      },
+      {
+        "threshold": 130028,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/place"
+        }
+      },
+      {
+        "threshold": 130029,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/grab_cake"
+        }
+      },
+      {
+        "threshold": 130030,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/climb"
+        }
+      },
+      {
+        "threshold": 130031,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/mine_ice"
+        }
+      },
+      {
+        "threshold": 130033,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/counter_loop"
+        }
+      },
+      {
+        "threshold": 130034,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/if_block"
+        }
+      },
+      {
+        "threshold": 130035,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/ui/instructions/if_not_block"
+        }
+      }
+    ]
+  }
+}

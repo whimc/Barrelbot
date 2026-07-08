@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:writable_book",
+              "minecraft:written_book"
+            ],
+            "predicates": {
+              "minecraft:custom_data": {
+                "kmc.ui.text_input": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "kmc.ui:int/input_received"
+  }
+}

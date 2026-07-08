@@ -1,0 +1,132 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/book"
+    },
+    "entries": [
+      {
+        "threshold": 130000,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/move_forward"
+        }
+      },
+      {
+        "threshold": 130001,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/turn_left"
+        }
+      },
+      {
+        "threshold": 130002,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/turn_right"
+        }
+      },
+      {
+        "threshold": 130003,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/end_code_block"
+        }
+      },
+      {
+        "threshold": 130004,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/if"
+        }
+      },
+      {
+        "threshold": 130005,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/loop"
+        }
+      },
+      {
+        "threshold": 130006,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/move_down"
+        }
+      },
+      {
+        "threshold": 130008,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/death_ray"
+        }
+      },
+      {
+        "threshold": 130009,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/place_block"
+        }
+      },
+      {
+        "threshold": 130010,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/grab"
+        }
+      },
+      {
+        "threshold": 130011,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/place"
+        }
+      },
+      {
+        "threshold": 130012,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/grab_cake"
+        }
+      },
+      {
+        "threshold": 130013,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/climb"
+        }
+      },
+      {
+        "threshold": 130014,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/mine_ice"
+        }
+      },
+      {
+        "threshold": 130016,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/counter_loop"
+        }
+      },
+      {
+        "threshold": 130017,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/if_block"
+        }
+      },
+      {
+        "threshold": 130018,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/if_not_block"
+        }
+      }
+    ]
+  }
+}

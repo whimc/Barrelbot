@@ -1,0 +1,76 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/writable_book"
+    },
+    "entries": [
+      {
+        "threshold": 130000,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_0"
+        }
+      },
+      {
+        "threshold": 130001,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_1"
+        }
+      },
+      {
+        "threshold": 130002,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_2"
+        }
+      },
+      {
+        "threshold": 130003,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_3"
+        }
+      },
+      {
+        "threshold": 130004,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_4"
+        }
+      },
+      {
+        "threshold": 130005,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_5"
+        }
+      },
+      {
+        "threshold": 130006,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_6"
+        }
+      },
+      {
+        "threshold": 130007,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_7"
+        }
+      },
+      {
+        "threshold": 130008,
+        "model": {
+          "type": "minecraft:model",
+          "model": "kmc.ui:prompt_8"
+        }
+      }
+    ]
+  }
+}

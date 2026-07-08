@@ -1,0 +1,1 @@
+$give @s book[minecraft:custom_name={text:'Counter Loop',color:'#FFF385',italic:false},minecraft:lore=[{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130005.0f]},minecraft:custom_data={barrelbot:{instruction:"loop","cycles":$(cycles)}}] 1

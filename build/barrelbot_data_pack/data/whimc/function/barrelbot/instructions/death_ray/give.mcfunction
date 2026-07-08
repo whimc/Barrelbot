@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Death Ray',color:'#7E36D6',italic:false},minecraft:lore=[{text:'Harness the UNMATCHED POWER OF THE SUN',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130008.0f]},minecraft:custom_data={barrelbot:{instruction:"death_ray"}}] 1

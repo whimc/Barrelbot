@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Mine Ice',color:'#00B3FF',italic:false},minecraft:lore=[{text:'Shoots a mining laser to break ice',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130014.0f]},minecraft:custom_data={barrelbot:{instruction: "mine_ice"}}] 1

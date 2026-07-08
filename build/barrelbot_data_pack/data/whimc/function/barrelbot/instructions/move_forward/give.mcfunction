@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Move Forward',color:'#FFAA00',italic:false},minecraft:lore=[{text:'Moves the barrelbot forward',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130000.0f]},minecraft:custom_data={barrelbot:{instruction: "move_forward"}}] 1

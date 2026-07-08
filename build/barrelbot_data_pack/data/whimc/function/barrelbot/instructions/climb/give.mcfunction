@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Climb',color:'#FFAA00',italic:false},minecraft:lore=[{text:'Climbs one block if against a wall',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130013.0f]},minecraft:custom_data={barrelbot:{instruction:"climb"}}] 1

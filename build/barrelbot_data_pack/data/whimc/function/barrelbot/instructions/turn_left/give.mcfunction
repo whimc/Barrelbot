@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'Turn Left',color:'#81FF12',italic:false},minecraft:lore=[{text:'Rotate the barrelbot',color:'#AAAAAA',italic:false},{text:' '},{text:'Instruction',color:'#5555FF',italic:false}],minecraft:custom_model_data={floats:[130001.0f]},minecraft:custom_data={barrelbot:{instruction: "turn_left"}}] 1

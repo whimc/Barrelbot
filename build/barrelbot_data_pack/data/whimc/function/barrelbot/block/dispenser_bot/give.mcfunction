@@ -1,0 +1,1 @@
+give @s dispenser[minecraft:custom_name={text:'Dispenser Bot',color:'#FFFF55',italic:false},minecraft:block_entity_data={id:"minecraft:dispenser",items:[{slot:0,id:"minecraft:barrier",count:1,components:{"minecraft:custom_data":{whimc:{block:{id:"dispenser_bot"}}}}}]},minecraft:custom_model_data={floats:[130123.0f]}]

@@ -1,0 +1,1 @@
+give @s shulker_box[minecraft:custom_name={text:'Function',color:'#55FFFF',italic:false},minecraft:block_entity_data={id:"minecraft:shulker_box",items:[{slot:0,id:"minecraft:barrier",count:1,components:{"minecraft:custom_data":{whimc:{block:{id:"function"}}}}}]},minecraft:custom_model_data={floats:[130123.0f]}]

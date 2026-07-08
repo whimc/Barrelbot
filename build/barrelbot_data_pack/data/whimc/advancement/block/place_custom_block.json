@@ -1,0 +1,42 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "tag": "whimc:custom_blocks"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:block_entity_data": {
+                  "items": [
+                    {
+                      "predicates": {
+                        "minecraft:custom_data": {
+                          "whimc": {
+                            "block": {}
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "whimc:barrelbot/block/place_custom_block"
+  }
+}

@@ -1,0 +1,1 @@
+give @s book[minecraft:custom_name={text:'End Code Block',color:'#F5255C',italic:false},minecraft:lore=[{text:' '},{text:'Instruction',color:'#5555FF',bold:false,italic:false}],minecraft:custom_model_data={floats:[130003.0f]},minecraft:custom_data={barrelbot:{instruction:"end_code_block"}}] 1

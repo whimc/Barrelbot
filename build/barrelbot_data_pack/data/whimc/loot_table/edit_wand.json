@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_fungus_on_a_stick",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "Right click to edit puzzle features",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": "Press 'f' to open menu",
+                  "color": "gray",
+                  "italic": false
+                }
+              ],
+              "mode": "replace_all"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "whimc_puzzle_wand": true
+                },
+                "minecraft:enchantment_glint_override": true
+              }
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Puzzle Wand",
+                "color": "#FFD9B8",
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

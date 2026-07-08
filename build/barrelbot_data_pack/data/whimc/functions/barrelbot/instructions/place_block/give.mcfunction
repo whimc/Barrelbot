@@ -1,1 +1,0 @@
-give @s book{display: {Name: '{"text":"Place Block","color":"#FAFAFA","italic":false}', Lore: ['{"text":"Places Block","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130009, barrelbot: {instruction: "place_block"}} 1

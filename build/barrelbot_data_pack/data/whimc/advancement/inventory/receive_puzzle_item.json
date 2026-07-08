@@ -1,0 +1,41 @@
+{
+  "criteria": {
+    "components": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:custom_data": {
+                "barrelbot": {
+                  "puzzle_item": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "legacy_tag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "nbt": "{barrelbot:{puzzle_item:1b}}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "components"
+    ],
+    [
+      "legacy_tag"
+    ]
+  ],
+  "rewards": {
+    "function": "whimc:barrelbot/no_smuggle/receive_puzzle_item"
+  }
+}

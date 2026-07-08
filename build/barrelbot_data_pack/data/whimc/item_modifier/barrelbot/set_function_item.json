@@ -1,0 +1,41 @@
+[
+  {
+    "function": "minecraft:set_lore",
+    "lore": [
+      {
+        "text": " "
+      },
+      {
+        "text": "Function",
+        "color": "blue",
+        "italic": false
+      }
+    ],
+    "mode": "replace_all"
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:custom_data": {
+        "barrelbot": {
+          "instruction": "function"
+        }
+      },
+      "minecraft:enchantment_glint_override": true
+    }
+  },
+  {
+    "function": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "whimc:storage"
+    },
+    "ops": [
+      {
+        "source": "item_modifier.id",
+        "target": "barrelbot.function_id",
+        "op": "replace"
+      }
+    ]
+  }
+]

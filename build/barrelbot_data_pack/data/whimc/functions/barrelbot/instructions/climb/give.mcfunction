@@ -1,1 +1,0 @@
-give @s book{display: {Name: '{"text":"Climb","color":"#FFAA00","italic":false}', Lore: ['{"text":"Climbs one block if against a wall","color":"gray","italic":false}', '{"text":" "}', '{"text":"Instruction","color":"blue","italic":false}']}, CustomModelData: 130013, barrelbot: {instruction: "climb"}} 1

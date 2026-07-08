@@ -1,6 +1,13 @@
 {
   "pack": {
-    "pack_format": 41,
-    "description": "WHIMC Barrelbot Pack\nAuthor: Kobe Duda"
+    "min_format": [
+      94,
+      1
+    ],
+    "max_format": [
+      94,
+      1
+    ],
+    "description": "WHIMC Barrelbot Pack\nAuthor: Kobe Duda\nMinecraft 1.21.11"
   }
 }

@@ -1,0 +1,1 @@
+give @s barrel[minecraft:custom_name={text:'Barrelbot',color:'#FFFF55',italic:false},minecraft:block_entity_data={id:"minecraft:barrel",items:[{slot:0,id:"minecraft:barrier",count:1,components:{"minecraft:custom_data":{whimc:{block:{id:"barrelbot"}}}}}]},minecraft:custom_model_data={floats:[130123.0f]}]
