@@ -3,3 +3,5 @@ $data remove storage whimc:storage TempInventory[{components:{"minecraft:custom_
 $data remove storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_id:$(id)}}}]
 execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1b}}}}] run function whimc:barrelbot/no_smuggle/return_all_items
 execute if data storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_item:1b}}}] run function whimc:barrelbot/no_smuggle/return_all_items
+execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1}}}}] run function whimc:barrelbot/no_smuggle/return_all_items
+execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1b}}}}] run function whimc:barrelbot/no_smuggle/return_all_items

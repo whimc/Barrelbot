@@ -28,7 +28,17 @@ TEXT_COLORS = {
 
 # NBT fields that must stay as byte values, not booleans.
 NUMERIC_BYTE_FIELDS = frozenset(
-    {"Count", "Slot", "Age", "PickupDelay", "Fire", "Health", "HurtTime", "Lifetime"}
+    {
+        "Count",
+        "Slot",
+        "Age",
+        "PickupDelay",
+        "Fire",
+        "Health",
+        "HurtTime",
+        "Lifetime",
+        "puzzle_item",
+    }
 )
 
 BLOCK_GIVES: dict[str, str] = {
@@ -307,6 +317,71 @@ def fix_scan_layer(text: str) -> str:
     return text
 
 
+def fix_setblock_custom_name(text: str) -> str:
+  text = re.sub(
+      r'setblock ~ ~ ~ barrel\[facing=up\]\{CustomName: \'\{\"text\":\"Barrelbot\"\}\'\}',
+      'setblock ~ ~ ~ barrel[facing=up]{components:{"minecraft:custom_name":{text:"Barrelbot",color:"#FFFF55",italic:false}}}',
+      text,
+  )
+  text = re.sub(
+      r'setblock ~ ~ ~ minecraft:barrel\[facing=up\]\{CustomName: \'\{\"text\":\"Barrelbot\"\}\'\}',
+      'setblock ~ ~ ~ minecraft:barrel[facing=up]{components:{"minecraft:custom_name":{text:"Barrelbot",color:"#FFFF55",italic:false}}}',
+      text,
+  )
+  text = text.replace(
+      'setblock ~ ~ ~ yellow_shulker_box[facing=up]{CustomName: "Instructor"}',
+      'setblock ~ ~ ~ yellow_shulker_box[facing=up]{components:{"minecraft:custom_name":{text:"Instructor",color:"#55FFFF",italic:false}}}',
+  )
+  text = re.sub(
+      r'setblock ~ ~ ~ shulker_box\[facing=up\]\{CustomName: \'\{\"text\":\"Function\"\}\'\}',
+      'setblock ~ ~ ~ shulker_box[facing=up]{components:{"minecraft:custom_name":{text:"Function",color:"#55FFFF",italic:false}}}',
+      text,
+  )
+  return text
+
+
+def fix_receive_puzzle_item_always_assign(path: Path) -> bool:
+    if path.name != "receive_puzzle_item.mcfunction":
+        return False
+    text = path.read_text(encoding="utf-8")
+    target = (
+        "advancement revoke @s only whimc:inventory/receive_puzzle_item\n"
+        "data modify storage whimc:storage Inventory set from entity @s Inventory\n"
+        "function whimc:barrelbot/no_smuggle/assign_id\n"
+    )
+    if target in text:
+        return False
+    updated = re.sub(
+        r"advancement revoke @s only whimc:inventory/receive_puzzle_item\n"
+        r"(?:execute store success score \$in_puzzle whimc\.dummy if entity @s\[tag=whimc\.in_puzzle\]\n)?"
+        r"data modify storage whimc:storage Inventory set from entity @s Inventory\n"
+        r"(?:execute if score \$in_puzzle whimc\.dummy matches 0 run )?"
+        r"function whimc:barrelbot/no_smuggle/assign_id\n",
+        target,
+        text,
+        count=1,
+    )
+    if updated == text:
+        return False
+    path.write_text(updated, encoding="utf-8")
+    return True
+
+
+def fix_touch_green(path: Path) -> bool:
+    if path.name != "touch_green.mcfunction":
+        return False
+    text = path.read_text(encoding="utf-8")
+    target = (
+        "scoreboard players set $success whimc.dummy 0\n"
+        "execute if entity @e[type=item_display, tag=whimc.barrelbot, tag=!whimc.dispenser_bot, predicate=whimc:barrelbot/match_id] run scoreboard players set $success whimc.dummy 1\n"
+        "execute as @e[type=item_display, tag=whimc.barrelbot, tag=!whimc.dispenser_bot, predicate=whimc:barrelbot/match_id] at @s unless block ~ ~-1 ~ minecraft:lime_concrete run scoreboard players set $success whimc.dummy 0\n"
+    )
+    if text.strip() == target.strip():
+        return False
+    path.write_text(target, encoding="utf-8")
+    return True
+
+
 def fix_mcfunction(path: Path) -> bool:
     original = path.read_text(encoding="utf-8")
     text = original
@@ -322,6 +397,7 @@ def fix_mcfunction(path: Path) -> bool:
     text = fix_lock_commands(text)
     text = fix_inventory_filters(text)
     text = fix_scan_layer(text)
+    text = fix_setblock_custom_name(text)
     if text != original:
         path.write_text(text, encoding="utf-8")
         return True
@@ -421,7 +497,9 @@ SCAN_MISMATCH_LEGACY = """data modify storage whimc:storage TempInventory set fr
 $data remove storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_id:$(id)}}}}]
 $data remove storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_id:$(id)}}}]
 execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1b}}}}] run function whimc:barrelbot/no_smuggle/return_all_items
-execute if data storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_item:1b}}}] run function whimc:barrelbot/no_smuggle/return_all_items"""
+execute if data storage whimc:storage TempInventory[{tag:{barrelbot:{puzzle_item:1b}}}] run function whimc:barrelbot/no_smuggle/return_all_items
+execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:1}}}}] run function whimc:barrelbot/no_smuggle/return_all_items
+execute if data storage whimc:storage TempInventory[{components:{"minecraft:custom_data":{barrelbot:{puzzle_item:true}}}}] run function whimc:barrelbot/no_smuggle/return_all_items"""
 
 
 def fix_no_smuggle_legacy_paths(path: Path) -> bool:
@@ -563,6 +641,10 @@ def main() -> None:
         if fix_no_smuggle_legacy_paths(path):
             changed = True
         if fix_edit_menu_interaction(path):
+            changed = True
+        if fix_receive_puzzle_item_always_assign(path):
+            changed = True
+        if fix_touch_green(path):
             changed = True
         if changed:
             mc_changed += 1
